@@ -1,4 +1,4 @@
-const apiKey = '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'
+const apiKey = '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'
 
 function get_response() {
     var question = document.getElementById("question").value;
@@ -15,7 +15,7 @@ function get_response() {
         model: model,
         prompt: question,
         temperature: 0.5,
-        max_tokens: 50,
+        max_tokens: 100,
       }),
     })
     .then(response => response.json())
