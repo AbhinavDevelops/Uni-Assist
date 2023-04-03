@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat Bot</title>
+        <script src="gpt.js"></script>
+    </head>
+
+    <body>
+        <div id="chatbot">
+            <div id="chatbot-header">
+                <div id="chatbot-header-title">Chat Bot</div>
+                <div id="chatbot-header-close">X</div>
+            </div>
+            <div id="chatbot-body">
+                <div id="chatbot-body-messages"></div>
+                <div id="chatbot-body-input">
+                    <input type="text" id="question" placeholder="Type your message here...">
+                    <button id="chatbot-body-input-button" onclick= get_response()>Send
+                        
+                    </button>
+                </div>
+            </div>
+                <div>
+                    Chat Answer:
+                </div>
+                <div id = "response">
+                </div>
+        </div>
+    </body>
+</html>
