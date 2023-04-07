@@ -35,6 +35,11 @@
   margin: 1em;
 }
 
+#chatbot-response > h2 {
+  font-weight: bold;
+  font-size: 18px;
+}
+
 #chatbot-body-messages {
   max-height: 200px;
   overflow-y: scroll;
