@@ -3,6 +3,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   font-family: sans-serif;
+  margin: 0.75em;
 }
 
 #chatbot-header {
@@ -28,6 +29,10 @@
 
 #chatbot-body {
   padding: 10px;
+}
+
+#chatbot-response {
+  margin: 1em;
 }
 
 #chatbot-body-messages {
