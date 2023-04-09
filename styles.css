@@ -88,3 +88,31 @@
   height: 185px;
   margin: 0.5em;
 }
+
+#chatbot-history {
+  margin: 10px;
+  color:rgb(183, 161, 17)
+}
+
+#history-list li:nth-child(2n) {
+  color: red;
+  list-style-type: none;
+  padding: 0;
+}
+
+#history-list li:nth-child(2n+1) {
+  color: blue;
+  list-style-type: none;
+  padding: 0;
+}
+
+#chatbot-history button {
+  padding: 10px;
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+  cursor: pointer;
+  float: right;
+}
