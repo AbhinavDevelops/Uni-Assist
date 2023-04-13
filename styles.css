@@ -22,6 +22,10 @@
   font-weight: bold;
 }
 
+#navbar-logo-link {
+  margin-left: 20px;
+}
+
 #chatbot-header-close {
   font-size: 24px;
   cursor: pointer;
@@ -31,11 +35,11 @@
   padding: 10px;
 }
 
-#chatbot-response {
+#chatbot-response, #chatbot-history {
   margin: 1em;
 }
 
-#chatbot-response > h2 {
+#chatbot-response > h2, #chatbot-history > h2{
   font-weight: bold;
   font-size: 18px;
 }
@@ -89,10 +93,6 @@
   margin: 0.5em;
 }
 
-#chatbot-history {
-  margin: 10px;
-  color:rgb(183, 161, 17)
-}
 
 #history-list li:nth-child(2n) {
   color: red;
@@ -115,4 +115,8 @@
   margin-right: 10px;
   cursor: pointer;
   float: right;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: rgb(218, 187, 70) !important;
 }
