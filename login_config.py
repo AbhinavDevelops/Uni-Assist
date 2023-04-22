@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static', static_folder='static')
+
 
 # Create SQLite3 database and table
 conn = sqlite3.connect('users.db')
