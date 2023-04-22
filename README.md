@@ -5,5 +5,5 @@ Aim is to create an interactive chatbot that can be accessed via a website compl
 Will be assessed via the following criteria: https://teaching.csse.uwa.edu.au/units/CITS3403/projects/Project2Criterion.pdf  
 
 # dependencies
-FLASK
+FLASK  
 SQLite3
