@@ -9,8 +9,9 @@ const apiKey = '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';
 // This array will store the history of questions and responses
 let history = [];
 
-  // Get the input element
+  // Get the input and send button elements
   const input = document.getElementById('question');
+  const sendButton = document.getElementById("#chatbot-body-input-button");
 
   // Listen for the 'keydown' event on the input element
   input.addEventListener('keydown', function(event) {
@@ -19,6 +20,9 @@ let history = [];
       // Do something, like submit a form or call a function
       get_response();
     }
+
+    input.addEventListener("click", get_response)
+
   });
 
 // This function sends a request to the OpenAI API to generate a response based on the user's input
