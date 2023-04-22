@@ -49,7 +49,32 @@ function get_response() {
         document.getElementById("response").innerHTML = data.choices[0].text;
         document.getElementById("history-list").innerHTML = "";
         for (let i = 0; i < history.length; i++) {
-            document.getElementById("history-list").innerHTML += "<li>" +"User: "+ history[i].question + "</li>" + "<li>" + "Response: "+ history[i].response + "</li>";
+            // Select history display
+            const historyDisplay = document.querySelector("#history-list");
+
+            // Create new list item each for "User" (you), [your question], "AI Assistant", [its response]
+            const newLiUserLabel = document.createElement("li");
+            const newLiUserText = document.createElement("li");
+            const newLiResponseLabel = document.createElement("li");
+            const newLiResponseText = document.createElement("li");
+
+            // Format the static labels
+            newLiUserLabel.innerText = "You";
+            newLiUserLabel.style.color = "black";
+            newLiUserLabel.style.fontWeight = "bold";
+            newLiResponseLabel.innerText = "AI Assistant";
+            newLiResponseLabel.style.color = "black";
+            newLiResponseLabel.style.fontWeight = "bold";
+
+            // Get the question and response data from history
+            newLiUserText.innerText = history[i].question
+            newLiResponseText.innerText = history[i].response
+
+            // Display the new list items
+            const newLis = [newLiUserLabel, newLiUserText, newLiResponseLabel, newLiResponseText];
+            for(let li of newLis) {
+                historyDisplay.appendChild(li);
+            }
         }
     })
     .catch(error => console.error(error)); // This line logs any errors that occur during the request
