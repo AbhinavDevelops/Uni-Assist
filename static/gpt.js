@@ -1,8 +1,5 @@
 
 
-// Store the user-id in localStorage
-localStorage.setItem('user-id', userId);
-console.log(localStorage.getItem('user-id'));
 
 document.addEventListener('DOMContentLoaded', function() {
 
