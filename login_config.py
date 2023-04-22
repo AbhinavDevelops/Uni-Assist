@@ -37,7 +37,7 @@ def login():
         conn.close()
 
         if user:
-            return f'Welcome, {username}!'
+            return render_template("index.html", user_id=user[0])
         else:
             return render_template('login.html', error='Invalid username or password. Please try again.')
 

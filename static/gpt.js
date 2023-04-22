@@ -1,3 +1,9 @@
+
+
+// Store the user-id in localStorage
+localStorage.setItem('user-id', userId);
+console.log(localStorage.getItem('user-id'));
+
 document.addEventListener('DOMContentLoaded', function() {
 
   // This line declares a constant variable named "apiKey" and assigns it a string value
