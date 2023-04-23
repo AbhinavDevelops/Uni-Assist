@@ -1,0 +1,131 @@
+#chatbot {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    font-family: sans-serif;
+    margin: 0.75em;
+}
+
+#chatbot-header {
+    background-color: whitesmoke;
+    color: #333;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chatbot-header-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#navbar-logo-link {
+    margin-left: 20px;
+}
+
+#chatbot-header-close {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#chatbot-body {
+    padding: 10px;
+}
+
+#chatbot-response, #chatbot-history {
+    margin: 1em;
+}
+
+#chatbot-response > h2, #chatbot-history > h2{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#chatbot-body-messages {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+#chatbot-body-messages p {
+    margin: 0 0 10px;
+}
+
+#chatbot-body-input {
+    display: flex;
+    margin-top: 10px;
+}
+
+#chatbot-body-input input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+}
+
+#chatbot-body-input button {
+    padding: 10px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#chatbot-body-input button:hover {
+    background-color: #27ae60;
+}
+
+#response {
+    padding: 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+#UWA-logo {
+    width: 8vi;
+    height: auto;
+    margin-left: auto;
+    margin-right: 5vi;
+}
+
+
+#history-list li:nth-child(2n) {
+    color: red;
+    list-style-type: none;
+    padding: 0;
+}
+
+#history-list li:nth-child(2n+1) {
+    color: blue;
+    list-style-type: none;
+    padding: 0;
+}
+
+#chatbot-history button {
+    padding: 10px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin-right: 10px;
+    cursor: pointer;
+    float: right;
+}
+
+nav {
+    height: 65px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: rgb(31, 76, 200) !important;
+}
+
+#by-students {
+    margin: 2em;
+}
