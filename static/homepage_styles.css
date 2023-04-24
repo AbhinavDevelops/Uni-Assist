@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+
+
+
 #chatbot {
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -126,6 +130,62 @@ nav {
     color: rgb(31, 76, 200) !important;
 }
 
-#by-students {
-    margin: 2em;
+body {
+    font-family: 'Hind Siliguri', sans-serif;
 }
+
+h1 {
+    font-weight: 700;
+    font-size: 120px;
+}
+
+#homepage_container {
+    margin: 11em;
+}
+
+#UA-description {
+    font-size: 45px;
+    font-weight: 300;
+}
+
+#your {
+    font-weight: 400;
+    color: #FFC107
+}
+
+.btn-try-now {
+    background-color: #144386;
+    color: #fff;
+    border: none;
+    padding: 10px 30px 10px 20px;
+    font-size: 1.2rem;
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-try-now:hover {
+    background-color: #FFC107;
+    color: #fff;
+}
+
+.btn-try-now:focus,
+.btn-try-now:active {
+    background-color: #959595;
+    color: #fff;
+    outline: none;
+    transition: none;
+}
+
+.btn-try-now::after {
+    content: "\25B8";
+    position: absolute;
+    top: calc(50%);
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+
+
+
