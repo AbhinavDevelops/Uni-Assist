@@ -67,5 +67,25 @@ def register():
     else:
         return render_template('register.html', error=None)
 
+@app.route("/homepage")
+def homepage():
+    return render_template("homepage.html")
+
+@app.route("/discussion")
+def homepage():
+    return render_template("discussion.html")
+
+@app.route("/pricing")
+def homepage():
+    return render_template("pricing.html")
+
+@app.route("/contact")
+def homepage():
+    return render_template("contact.html")
+
+@app.route("/ai-chat")
+def homepage():
+    return render_template("index.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
