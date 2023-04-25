@@ -132,6 +132,12 @@
     background-color: black;
 }
 
+.carousel-inner {
+    width: 300px;
+    height: auto;
+    margin: auto;
+    border-radius: 50%;
+}
 
 
 #history-list li:nth-child(2n) {
