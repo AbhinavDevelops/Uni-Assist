@@ -1,100 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
 
-
-
-#chatbot {
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    font-family: sans-serif;
-    margin: 0.75em;
-}
-
-#chatbot-header {
-    background-color: whitesmoke;
-    color: #333;
-    padding: 10px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#chatbot-header-title {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#navbar-logo-link {
-    margin-left: 20px;
-}
-
-#chatbot-header-close {
-    font-size: 24px;
-    cursor: pointer;
-}
-
-#chatbot-body {
-    padding: 10px;
-}
-
-#chatbot-response, #chatbot-history {
-    margin: 1em;
-}
-
-#chatbot-response > h2, #chatbot-history > h2{
-    font-weight: bold;
-    font-size: 18px;
-}
-
-#chatbot-body-messages {
-    max-height: 200px;
-    overflow-y: scroll;
-}
-
-#chatbot-body-messages p {
-    margin: 0 0 10px;
-}
-
-#chatbot-body-input {
-    display: flex;
-    margin-top: 10px;
-}
-
-#chatbot-body-input input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    border-radius: 3px;
-    border: none;
-}
-
-#chatbot-body-input button {
-    padding: 10px;
-    background-color: #2ecc71;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    margin-left: 10px;
-    cursor: pointer;
-}
-
-#chatbot-body-input button:hover {
-    background-color: #27ae60;
-}
-
-#response {
-    padding: 20px;
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
 .UA-logo {
     width: 265px;
     height: auto;
-    margin-top: 0.4em;
     margin-left: 15px;
     margin-right: auto;
 }
@@ -107,7 +15,6 @@
     position: absolute; /* position the blue image relative to the container */
     width: 265px;
     height: auto;
-    margin-top: 0.4em;
     margin-left: 15px;
     margin-right: auto;
     top: 5px;
@@ -116,15 +23,33 @@
     transition: opacity 0.3s ease-in-out;
 }
 
+
+
 .UA-logo-container:hover .UA-logo-hover {
     opacity: 1; /* show the blue image on hover */
 }
 
-#UWA-logo {
+#UWA-header-logo {
     width: 165px;
     height: auto;
     margin-left: auto;
     margin-right: 80px;
+}
+
+#UA-footer-logo {
+    position: absolute;
+    bottom: 45%;
+    left: 10%;
+    width: 400px;
+    height: auto;
+}
+
+#UWA-footer-logo {
+    position: absolute;
+    top: 33%;
+    left: 13%;
+    width: 285px;
+    height: auto;
 }
 
 .carousel-control-prev-icon,
@@ -133,10 +58,10 @@
 }
 
 .carousel-inner {
-    width: 300px;
+    width: 900px;
     height: auto;
     margin: auto;
-    border-radius: 50%;
+    border-radius: 15%;
 }
 
 
@@ -152,28 +77,19 @@
     padding: 0;
 }
 
-#chatbot-history button {
-    padding: 10px;
-    background-color: #2ecc71;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    margin-right: 10px;
-    cursor: pointer;
-    float: right;
-}
-
-nav {
-    height: 80px;
+#footer-row {
+    padding-top: 45px;
 }
 
 .nav-link {
-    margin: 10px;
+    margin-right: 10px;
     font-size: 21px;
 }
 
-#main-navbar {
-    background-color: #f4aa00;
+#navbarNav {
+    display: inline-block;
+    margin-bottom: 5px;
+    z-index: 1;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
@@ -182,6 +98,14 @@ nav {
 
 body {
     font-family: 'Hind Siliguri', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.footer {
+    position: absolute;
+    top: 185%;
 }
 
 h1 {
@@ -193,10 +117,51 @@ h1 {
     margin: 9em;
 }
 
+#by-students {
+    color: white;
+}
+
 #UA-description {
     font-size: 45px;
     font-weight: 300;
+    color: white;
 }
+
+
+#background-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg,
+    rgba(2,0,0.6,1) 0%,
+    rgb(23, 23, 132) 35%,
+    rgb(71, 162, 209) 100%);
+}
+
+@keyframes animate {
+    0%{
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 50%;
+    }
+    100%{
+        transform: scale(1.4) translateY(-90px) rotate(540deg);
+        opacity: 0;
+    }
+}
+
+.carousel {
+    position: absolute;
+    left: 25%;
+    top: 100%;
+}
+
+
+#main-navbar {
+    background-color: #f4aa00;
+    height: 95px;
+}
+
 
 #your {
     font-weight: 400;
@@ -204,26 +169,30 @@ h1 {
 }
 
 .btn-try-now {
-    background-color: #144386;
-    color: #fff;
+    background-color: #FFC107;
+    color: rgba(23, 23, 132, 0.8);
     border: none;
     padding: 10px 30px 10px 20px;
     font-size: 1.2rem;
     position: relative;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
 }
 
 .btn-try-now:hover {
-    background-color: #FFC107;
-    color: #fff;
+    background-color: rgb(23, 23, 132);
+    color: rgb(255,193,7,0.7);
 }
 
 .btn-try-now:focus,
 .btn-try-now:active {
     background-color: #959595;
-    color: #fff;
+    color: #f4aa00;
     outline: none;
     transition: none;
+}
+
+.btn-try-now::before {
+    color: #f4aa00;
 }
 
 .btn-try-now::after {
@@ -233,7 +202,80 @@ h1 {
     right: 15px;
     transform: translateY(-50%);
     font-size: 0.8rem;
-    color: #fff;
+    color: rgb(23, 23, 132);
+    transition: color 0.8s ease-in-out;
+}
+
+.btn-try-now:hover::after {
+    color: #f4aa00;
+}
+
+
+.box img {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    z-index: 1;
+}
+
+.box img:nth-child(1) {
+    top: 19%;
+    left: 42%;
+    animation: animate 10s linear infinite;
+}
+
+.box img:nth-child(2) {
+    top: 70%;
+    left: 50%;
+    animation: animate 7s linear infinite;
+}
+
+.box img:nth-child(3) {
+    top: 22%;
+    left: 6%;
+    animation: animate 9s linear infinite;
+}
+
+.box img:nth-child(4) {
+    top: 20%;
+    left: 60%;
+    animation: animate 10s linear infinite;
+}
+
+.box img:nth-child(5) {
+    top: 67%;
+    left: 10%;
+    animation: animate 6s linear infinite;
+}
+
+.box img:nth-child(6) {
+    top: 80%;
+    left: 70%;
+    animation: animate 12s linear infinite;
+}
+
+.box img:nth-child(7) {
+    top: 60%;
+    left: 80%;
+    animation: animate 15s linear infinite;
+}
+
+.box img:nth-child(8) {
+    top: 32%;
+    left: 25%;
+    animation: animate 16s linear infinite;
+}
+
+.box img:nth-child(9) {
+    top: 90%;
+    left: 25%;
+    animation: animate 9s linear infinite;
+}
+
+.box img:nth-child(10) {
+    top: 20%;
+    left: 80%;
+    animation: animate 5s linear infinite;
 }
 
 

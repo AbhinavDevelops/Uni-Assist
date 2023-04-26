@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Uni Assist Homepage</title>
+    <meta charset="utf-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +13,31 @@
 </head>
 
 <body>
+
+<div id="background-wrapper">
+    <div id="homepage_container">
+        <h1 id="by-students">By students,<br>for students.</h1>
+        <p id="UA-description">A cooperative solution to uni assessment assistance.
+            <br>Talk to a student, or talk to our AI - learn on <span id="your">your</span> terms. </p>
+        <br>
+        <a href="http://127.0.0.1:5000/" class="btn btn-try-now">Try for Free</a>
+
+    </div>
+    <div class="box">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+    </div>
+</div>
+
+
 <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand UA-logo-container" href="homepage.html" id="navbar-logo-link">
         <img class="UA-logo" src="../static/graphics/UA_logo_long_white.png" alt="Uni Assist">
@@ -23,70 +49,87 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul id="nav-links" class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link mr-3 text-white" href="#">AI Help</a>
+                <a class="nav-link mr-3 text-white" href="index.html">AI Help</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mr-3 text-white" href="#">Discussion</a>
+                <a class="nav-link mr-3 text-white" href="discussion.html">Discussion</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mr-3 text-white" href="#">Pricing</a>
+                <a class="nav-link mr-3 text-white" href="pricing.html">Pricing</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mr-3 text-white" href="#">Contact Us</a>
+                <a class="nav-link mr-3 text-white" href="contact.html">Contact Us</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="http://127.0.0.1:5000/">Sign-In</a>
             </li>
         </ul>
-        <img id="UWA-logo" src="../static/graphics/UWA_logo.png" alt="UWA logo" onclick="window.location = 'https://www.uwa.edu.au/'">
+        <img id="UWA-header-logo" src="../static/graphics/UWA_logo.png" alt="UWA logo" onclick="window.location = 'https://www.uwa.edu.au/'">
     </div>
 </nav>
 
-<div id="homepage_container">
-    <h1 id="by-students">By students,<br>for students.</h1>
-    <p id="UA-description">A cooperative solution to uni assessment assistance.
-        <br>Talk to a student, or talk to our AI - learn on <span id="your">your</span> terms. </p>
-    <br>
-    <a href="http://127.0.0.1:5000/" class="btn btn-try-now">Try for Free</a>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../static/graphics/person1.png" class="testimonial-photo d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Slide 1</h5>
-                    <p>Some text describing the first slide.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="../static/graphics/person2.png" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Slide 2</h5>
-                    <p>Some text describing the second slide.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="../static/graphics/person3.png" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="h3" style="color: black;">Slide 3</h5>
-                    <p style="color: black;">Some text describing the third slide.</p>
-                </div>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../static/graphics/testimonial_1.png" class="testimonial-photo d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
             </div>
         </div>
-        <button class="carousel-control-prev text-dark" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next text-dark" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <div class="carousel-item">
+            <img src="../static/graphics/testimonial_2.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="../static/graphics/testimonial_3.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
     </div>
-
-
-
-
+    <button class="carousel-control-prev text-dark" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next text-dark" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
+
+<footer class="footer bg-light" style="width: 100%;">
+    <div class="container">
+        <div id="footer-row" class="row">
+            <div class="col-md-4 mb-4 text-center">
+                <img id="UA-footer-logo" src="/static/graphics/UA%20Logo%202.png" alt="UA-logo">
+                <img id="UWA-footer-logo" src="/static/graphics/UWA_logo.png" alt="UA-logo">
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5>Quick Links</h5>
+                <p class="mt-4">
+                    <a class="text-black" href="index.html">AI Help</a> <br>
+                    <a class="text-black" href="discussion.html">Discussion</a> <br>
+                    <a class="text-black" href="pricing.html">Pricing</a> <br>
+                    <a class="text-black" href="contact.html">Contact Us</a> <br>
+                    <a class="text-black" href="http://127.0.0.1:5000/">Sign-In</a> <br><br><br><br>
+                </p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5>Resources</h5>
+                <p class="mt-4">
+                    <a class="text-black" href="https://student.sims.uwa.edu.au/connect/webconnect">StudentConnect</a> <br>
+                    <a class="text-black" href="https://lms.uwa.edu.au/ultra/course">LMS</a> <br>
+                    <a class="text-black" href="https://handbooks.uwa.edu.au/">UWA Handbook 2023</a> <br>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+                <p class="text-left">© Uni Assist Western Australia 2023</p>
+            </div>
+        </div>
+    </div>
+</footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
