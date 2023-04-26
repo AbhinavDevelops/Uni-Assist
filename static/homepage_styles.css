@@ -170,29 +170,27 @@ h1 {
 
 .btn-try-now {
     background-color: #FFC107;
-    color: rgba(23, 23, 132, 0.8);
+    color: rgb(23, 23, 132);
     border: none;
     padding: 10px 30px 10px 20px;
     font-size: 1.2rem;
     position: relative;
-    transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .btn-try-now:hover {
-    background-color: rgb(23, 23, 132);
-    color: rgb(255,193,7,0.7);
+    background-color: white;
 }
 
 .btn-try-now:focus,
 .btn-try-now:active {
     background-color: #959595;
-    color: #f4aa00;
     outline: none;
     transition: none;
 }
 
 .btn-try-now::before {
-    color: #f4aa00;
+    color: rgb(188, 144, 2);
 }
 
 .btn-try-now::after {
@@ -203,12 +201,9 @@ h1 {
     transform: translateY(-50%);
     font-size: 0.8rem;
     color: rgb(23, 23, 132);
-    transition: color 0.8s ease-in-out;
+    transition: color 0.3s ease-in-out;
 }
 
-.btn-try-now:hover::after {
-    color: #f4aa00;
-}
 
 
 .box img {
@@ -243,9 +238,9 @@ h1 {
 }
 
 .box img:nth-child(5) {
-    top: 67%;
-    left: 10%;
-    animation: animate 6s linear infinite;
+    top: 39%;
+    left: 24%;
+    animation: animate 8s linear infinite;
 }
 
 .box img:nth-child(6) {
@@ -262,7 +257,7 @@ h1 {
 
 .box img:nth-child(8) {
     top: 32%;
-    left: 25%;
+    left: 39%;
     animation: animate 16s linear infinite;
 }
 
