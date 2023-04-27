@@ -338,6 +338,14 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+.submission-confirm {
+    position: absolute;
+    top: 320%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+}
+
 /* FEATURES */
 
 #features-h2 {
@@ -346,6 +354,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 100px;
+    font-weight: lighter;
 }
 
 #features-container {
