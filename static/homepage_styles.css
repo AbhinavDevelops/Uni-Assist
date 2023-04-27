@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
 
+/* LOGOS */
+
 .UA-logo {
     width: 265px;
     height: auto;
@@ -8,25 +10,23 @@
 }
 
 .UA-logo-container {
-    position: relative; /* make the container a positioning context */
+    position: relative;
 }
 
 .UA-logo-hover {
-    position: absolute; /* position the blue image relative to the container */
+    position: absolute;
     width: 265px;
     height: auto;
     margin-left: 15px;
     margin-right: auto;
     top: 5px;
     left: 0;
-    opacity: 0; /* start with the blue image hidden */
+    opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
-
-
 .UA-logo-container:hover .UA-logo-hover {
-    opacity: 1; /* show the blue image on hover */
+    opacity: 1;
 }
 
 #UWA-header-logo {
@@ -52,6 +52,14 @@
     height: auto;
 }
 
+/* CAROUSEL */
+
+.carousel {
+    position: absolute;
+    left: 25%;
+    top: 100%;
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: black;
@@ -64,22 +72,7 @@
     border-radius: 15%;
 }
 
-
-#history-list li:nth-child(2n) {
-    color: red;
-    list-style-type: none;
-    padding: 0;
-}
-
-#history-list li:nth-child(2n+1) {
-    color: blue;
-    list-style-type: none;
-    padding: 0;
-}
-
-#footer-row {
-    padding-top: 45px;
-}
+/* NAVBAR */
 
 .nav-link {
     margin-right: 10px;
@@ -92,20 +85,33 @@
     z-index: 1;
 }
 
+#main-navbar {
+    background-color: #f4aa00;
+    height: 95px;
+}
+
 .navbar-nav .nav-item .nav-link:hover {
     color: rgb(31, 76, 200) !important;
 }
 
-body {
-    font-family: 'Hind Siliguri', sans-serif;
-    margin: 0;
-    padding: 0;
+/* FOOTER */
+
+#footer-row {
+    padding-top: 45px;
 }
 
 
 .footer {
     position: absolute;
     top: 185%;
+}
+
+/* TEXT */
+
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -127,46 +133,12 @@ h1 {
     color: white;
 }
 
-
-#background-wrapper {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: linear-gradient(90deg,
-    rgba(2,0,0.6,1) 0%,
-    rgb(23, 23, 132) 35%,
-    rgb(71, 162, 209) 100%);
-}
-
-@keyframes animate {
-    0%{
-        transform: scale(0) translateY(0) rotate(0);
-        opacity: 50%;
-    }
-    100%{
-        transform: scale(1.4) translateY(-90px) rotate(540deg);
-        opacity: 0;
-    }
-}
-
-.carousel {
-    position: absolute;
-    left: 25%;
-    top: 100%;
-}
-
-
-#main-navbar {
-    background-color: #f4aa00;
-    height: 95px;
-}
-
-
 #your {
     font-weight: 400;
     color: #FFC107
 }
+
+/* BUTTON ANIMATIONS */
 
 .btn-try-now {
     background-color: #FFC107;
@@ -204,7 +176,29 @@ h1 {
     transition: color 0.3s ease-in-out;
 }
 
+/* BACKGROUND ANIMATIONS */
 
+#background-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg,
+    rgba(2,0,0.6,1) 0%,
+    rgb(23, 23, 132) 35%,
+    rgb(71, 162, 209) 100%);
+}
+
+@keyframes animate {
+    0%{
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 15%;
+    }
+    100%{
+        transform: scale(1.4) translateY(-90px) rotate(540deg);
+        opacity: 0;
+    }
+}
 
 .box img {
     position: absolute;
@@ -250,8 +244,8 @@ h1 {
 }
 
 .box img:nth-child(7) {
-    top: 60%;
-    left: 80%;
+    top: 73%;
+    left: 87%;
     animation: animate 15s linear infinite;
 }
 
