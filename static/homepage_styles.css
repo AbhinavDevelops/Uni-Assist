@@ -56,8 +56,9 @@
 
 .carousel {
     position: absolute;
-    left: 25%;
-    top: 100%;
+    left: 50%;
+    top: 225%;
+    transform: translate(-50%, -50%);
 }
 
 .carousel-control-prev-icon,
@@ -66,7 +67,7 @@
 }
 
 .carousel-inner {
-    width: 900px;
+    width: 85%;
     height: auto;
     margin: auto;
     border-radius: 15%;
@@ -103,7 +104,7 @@
 
 .footer {
     position: absolute;
-    top: 245%;
+    top: 325%;
 }
 
 /* TEXT */
@@ -120,7 +121,7 @@ h1 {
 }
 
 #homepage_container {
-    margin: 9em;
+    margin: 10em;
 }
 
 #by-students {
@@ -303,27 +304,84 @@ h1 {
     height: 1px;
     background-color: lightgrey;
     position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.divider-1 {
     top: 175%;
-    left: 41.9%;
+}
+
+.divider-2 {
+    top: 255%;
 }
 
 #contact-form {
     position: absolute;
-    top: 195%;
-    left: 22.5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    top: 300%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #contact-us-h2 {
     position: absolute;
-    top: 186%;
-    left: 44.5%;
+    top: 272%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
 }
 
 #contact-anchor-point {
     position: absolute;
-    top: 183%;
-    left: 44.5%;
+    top: 265%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* FEATURES */
+
+#features-h2 {
+    position: absolute;
+    top: 115%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+}
+
+#features-container {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    top: 140%;
+    transform: translate(-50%, -50%);
+}
+
+#features-container > img {
+    width: 400px;
+    height: auto;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.feature:nth-child(1) {
+    transition-delay: 200ms;
+}
+
+.feature:nth-child(2) {
+    transition-delay: 400ms;
+}
+
+.feature:nth-child(3) {
+    transition-delay: 500ms;
 }
