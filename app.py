@@ -87,7 +87,7 @@ def register():
 
 # Forum routes and functions
 
-@app.route('/discussion.html', methods=['GET'])
+@app.route('/discussion', methods=['GET'])
 def discussion():
     # Retrieve existing topics from the database
     # Create SQLite3 database and table for topics
@@ -189,10 +189,6 @@ def new_topic():
 @app.route("/homepage")
 def homepage():
     return render_template("homepage.html")
-
-@app.route("/discussion")
-def discussion():
-    return render_template("discussion.html")
 
 @app.route("/pricing")
 def pricing():
