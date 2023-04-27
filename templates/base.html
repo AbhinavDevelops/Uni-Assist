@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Uni Assist</title>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="../static/homepage_app.js"></script>
+    <link rel="stylesheet" href="../static/styles.css" />
+    <link rel="stylesheet" href="../static/homepage_styles.css" />
+    <link rel="icon" type="image/x-icon" href="../static/graphics/Jeffrey_white.png">
+</head>
+
+<body>
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand UA-logo-container" href="{{ url_for('homepage') }}" id="navbar-logo-link">
+            <img class="UA-logo" src="../static/graphics/UA_logo_long_white.png" alt="Uni Assist">
+            <img class="UA-logo-hover" src="../static/graphics/UA_logo_long_blue.png" alt="Uni Assist">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul id="nav-links" class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link mr-3 text-white" href="ai-chat">AI Help</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-3 text-white" href="{{ url_for('discussion') }}">Discussion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-3 text-white" href="pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-3 text-white" href="{{ url_for('homepage') }}#contact-anchor-point">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="login">Sign-In</a>
+                </li>
+            </ul>
+            <img id="UWA-header-logo" src="../static/graphics/UWA_logo.png" alt="UWA logo" onclick="window.location = 'https://www.uwa.edu.au/'">
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <footer class="footer bg-light" style="width: 100%;">
+        <div class="container">
+            <div id="footer-row" class="row">
+                <div class="col-md-4 mb-4 text-center">
+                    <img id="UA-footer-logo" src="/static/graphics/UA_logo_tall.png" alt="UA-logo">
+                    <img id="UWA-footer-logo" src="../static/graphics/UWA_logo.png" alt="UWA logo" onclick="window.location = 'https://www.uwa.edu.au/'">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <p class="mt-4">
+                        <a class="text-black" href="index.html">AI Help</a> <br>
+                        <a class="text-black" href="discussion.html">Discussion</a> <br>
+                        <a class="text-black" href="pricing.html">Pricing</a> <br>
+                        <a class="text-black" href="#contact-anchor-point">Contact Us</a> <br>
+                        <a class="text-black" href="http://127.0.0.1:5000/">Sign-In</a> <br><br><br><br>
+                    </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Resources</h5>
+                    <p class="mt-4">
+                        <a class="text-black" href="https://student.sims.uwa.edu.au/connect/webconnect">StudentConnect</a> <br>
+                        <a class="text-black" href="https://lms.uwa.edu.au/ultra/course">LMS</a> <br>
+                        <a class="text-black" href="https://handbooks.uwa.edu.au/">UWA Handbook 2023</a> <br>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                    <p class="text-left">© 2023 Uni Assist Western Australia </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

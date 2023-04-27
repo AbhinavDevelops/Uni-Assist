@@ -329,6 +329,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 100px;
+    font-weight: lighter;
 }
 
 #contact-anchor-point {
@@ -343,7 +344,7 @@ h1 {
     top: 320%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: red;
+    color: darkblue;
 }
 
 /* FEATURES */

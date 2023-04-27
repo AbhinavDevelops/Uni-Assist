@@ -22,6 +22,11 @@ conn.commit()
 conn.close()
 
 @app.route('/')
+def homepage():
+    return render_template("homepage.html")
+
+
+@app.route('/login')
 def index():
     return render_template('login.html', error=None)
 
@@ -179,16 +184,11 @@ def new_topic():
         conn.close()
         
         # Redirect to the discussion page
-        return redirect(url_for('discussion'))
+        return redirect(url_for('discussion.html'))
     
     # Render the new topic page template
     return render_template('new_topic.html')
 
-
-
-@app.route("/homepage")
-def homepage():
-    return render_template("homepage.html")
 
 @app.route("/pricing")
 def pricing():
