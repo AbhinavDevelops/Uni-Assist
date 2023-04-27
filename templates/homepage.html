@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500;700&display=swap" rel="stylesheet">
     <script src="../static/homepage_app.js"></script>
     <link rel="stylesheet" href="../static/homepage_styles.css" />
-    <link rel="icon" type="image/x-icon" href="../static/graphics/UWA_logo.png">
+    <link rel="icon" type="image/x-icon" href="../static/graphics/Jeffrey.png">
 </head>
 
 <body>
@@ -58,7 +58,7 @@
                 <a class="nav-link mr-3 text-white" href="pricing.html">Pricing</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mr-3 text-white" href="contact.html">Contact Us</a>
+                <a class="nav-link mr-3 text-white" href="#contact-anchor-point">Contact Us</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="http://127.0.0.1:5000/">Sign-In</a>
@@ -67,6 +67,8 @@
         <img id="UWA-header-logo" src="../static/graphics/UWA_logo.png" alt="UWA logo" onclick="window.location = 'https://www.uwa.edu.au/'">
     </div>
 </nav>
+
+<div id="page-arrow"></div>
 
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2300">
     <div class="carousel-inner">
@@ -95,13 +97,50 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+<div class="light-grey-divider"></div>
+<div id="contact-anchor-point"></div>
+<br>
+<h2 id="contact-us-h2">Contact Us</h2>
+
+<form id="contact-form" style="width: 1000px;">
+    <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Name:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" placeholder="Name">
+        </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label">Email:</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" placeholder="example@email.com">
+        </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <label for="subject" class="col-sm-2 col-form-label">Subject:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="subject" placeholder="Subject">
+        </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <label for="description" class="col-sm-2 col-form-label">Description:</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" id="description" rows="3" placeholder="Description"></textarea>
+        </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
 
 <footer class="footer bg-light" style="width: 100%;">
     <div class="container">
         <div id="footer-row" class="row">
             <div class="col-md-4 mb-4 text-center">
-                <img id="UA-footer-logo" src="/static/graphics/UA%20Logo%202.png" alt="UA-logo">
-                <img id="UWA-footer-logo" src="/static/graphics/UWA_logo.png" alt="UA-logo">
+                <img id="UA-footer-logo" src="/static/graphics/UA_logo_tall.png" alt="UA-logo">
+                <img id="UWA-footer-logo" src="../static/graphics/UWA_logo.png" alt="UWA logo" onclick="window.location = 'https://www.uwa.edu.au/'">
             </div>
             <div class="col-md-4 mb-4">
                 <h5>Quick Links</h5>
@@ -109,7 +148,7 @@
                     <a class="text-black" href="index.html">AI Help</a> <br>
                     <a class="text-black" href="discussion.html">Discussion</a> <br>
                     <a class="text-black" href="pricing.html">Pricing</a> <br>
-                    <a class="text-black" href="contact.html">Contact Us</a> <br>
+                    <a class="text-black" href="#">Contact Us</a> <br>
                     <a class="text-black" href="http://127.0.0.1:5000/">Sign-In</a> <br><br><br><br>
                 </p>
             </div>
