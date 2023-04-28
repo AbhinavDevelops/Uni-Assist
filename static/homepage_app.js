@@ -32,15 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameInput = document.querySelector("#name");
     const contactForm = document.querySelector("#contact-form");
 
-    contactSubmit.addEventListener("click", (e) => {
-        e.preventDefault();
-        if(isFormFilled(contactForm)) {
-            const name = nameInput.value;
-            const submissionConfirmation = document.createElement("h5");
-            submissionConfirmation.classList.add("submission-confirm")
-            submissionConfirmation.innerHTML= `Thank you for reaching out, <span>${name}!</span> We will get back to you by email within 3 business days!`;
-            contactDiv.appendChild(submissionConfirmation);
-        }
-    })
+    // contactSubmit.addEventListener("click", (e) => {
+    //     e.preventDefault();
+    //     if(isFormFilled(contactForm)) {
+    //         const name = nameInput.value;
+    //         const submissionConfirmation = document.createElement("h5");
+    //         submissionConfirmation.classList.add("submission-confirm")
+    //         submissionConfirmation.innerHTML= `Thank you for reaching out, <span>${name}!</span> We will get back to you by email within 3 business days!`;
+    //         contactDiv.appendChild(submissionConfirmation);
+    //     }
+    // })
 })
 

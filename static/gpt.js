@@ -11,7 +11,7 @@ let history = [];
 
   // Get the input and send button elements
   const input = document.getElementById('question');
-  const sendButton = document.getElementById("#chatbot-body-input-button");
+  const sendButton = document.getElementById("chatbot-body-input-button");
 
   // Listen for the 'keydown' event on the input element
   input.addEventListener('keydown', function(event) {
@@ -34,11 +34,8 @@ function get_response() {
     // This constant variable specifies which OpenAI model to use for generating the response
     const model = 'text-davinci-002';
 
-    const chatContext = [];
+    let chatContext = [];
     for (let i = 0; i < history.length; i++) {
-        chatContext.push("what I asked:");
-        chatContext.push(history[i].question);
-        chatContext.push("what you responded");
         chatContext.push(history[i].response);
     }
 
@@ -51,8 +48,8 @@ function get_response() {
       },
       body: JSON.stringify({
         model: model,
-        prompt: `using the previous context of our conversation: ${chatContext}, ${question}?`,
-        temperature: 0.5,
+        prompt: `using the previous context of your responses: ${chatContext}, ${question}?`,
+        temperature: 1,
         max_tokens: 100,
       }),
     })
@@ -62,7 +59,6 @@ function get_response() {
         // This line stores the question and response in the history array
         history.push({question: question, response: data.choices[0].text.trim()});
         // This line updates the HTML to display the current response and the history of questions and responses
-        document.getElementById("response").innerHTML = data.choices[0].text;
         document.getElementById("history-list").innerHTML = "";
         for (let i = 0; i < history.length; i++) {
             // Select history display
@@ -89,12 +85,20 @@ function get_response() {
             newUserText.classList.add("question");
             newUserText.innerText = history[i].question;
             newResponseText.classList.add("response");
-            if (history[i].response != "") {
-                newResponseText.innerText = history[i].response;
+
+            // Response if API returns nothing - happens occasionally
+            let aiResponse = history[i].response;
+            if (aiResponse.charAt(0) === ",") {
+                aiResponse = aiResponse.slice(1);
+            }
+            if (aiResponse !== "") {
+                newResponseText.innerText = aiResponse;
             }
             else {
                 newResponseText.innerText = "Please try asking that again, or try a different question."
             }
+
+            document.getElementById("response").innerHTML = aiResponse;
 
             // Display the new list items
             const newLis = [newUserLabel, newUserText, newResponseLabel, newResponseText];
@@ -104,11 +108,7 @@ function get_response() {
         }
     })
     .catch(error => console.error(error)); // This line logs any errors that occur during the request
-
-} 
-
-
-
+}
 });
 
 function clear_history() {
