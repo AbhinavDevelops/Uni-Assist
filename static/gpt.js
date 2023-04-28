@@ -19,6 +19,7 @@ let history = [];
     if (event.key === 'Enter') {
       // Do something, like submit a form or call a function
       get_response();
+      input.value = "";
     }
 
     sendButton.addEventListener("click", get_response)
