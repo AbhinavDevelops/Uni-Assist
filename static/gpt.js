@@ -74,11 +74,6 @@ function get_response() {
             const newResponseText = document.createElement("div");
 
 
-            for(let item of history) {
-                console.log(item);
-            }
-
-
             // Format the static labels
             newUserLabel.innerText = "You";
             newUserLabel.style.color = "black";
@@ -93,7 +88,12 @@ function get_response() {
             newUserText.classList.add("question");
             newUserText.innerText = history[i].question;
             newResponseText.classList.add("response");
-            newResponseText.innerText = history[i].response;
+            if (history[i].response != "") {
+                newResponseText.innerText = history[i].response;
+            }
+            else {
+                newResponseText.innerText = "Please try asking that again, or try a different question."
+            }
 
             // Display the new list items
             const newLis = [newUserLabel, newUserText, newResponseLabel, newResponseText];
