@@ -13,6 +13,40 @@
   console.log(localStorage.getItem('user-id'));
 </script>
 <script src="../static/gpt.js"></script>
+<style>
+  #history-list {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin: 30px;
+  }
+
+  #history-list > div {
+    border-radius: 10px;
+    box-sizing: border-box;
+    max-width: 40%;
+  }
+
+  p.question {
+    align-self: flex-end;
+  }
+
+  div.question {
+    align-self: flex-end;
+    background-color: lightblue;
+    padding: 10px;
+  }
+
+  p.response {
+    align-self: flex-start;
+  }
+
+  div.response {
+    align-self: flex-start;
+    background-color: lightgreen;
+    padding: 10px;
+  }
+</style>
 
 <div id="chatbot">
   <div id="chatbot-body">

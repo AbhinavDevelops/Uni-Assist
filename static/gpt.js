@@ -21,7 +21,7 @@ let history = [];
       get_response();
     }
 
-    input.addEventListener("click", get_response)
+    sendButton.addEventListener("click", get_response)
 
   });
 
@@ -33,6 +33,14 @@ function get_response() {
     // This constant variable specifies which OpenAI model to use for generating the response
     const model = 'text-davinci-002';
 
+    const chatContext = [];
+    for (let i = 0; i < history.length; i++) {
+        chatContext.push("what I asked:");
+        chatContext.push(history[i].question);
+        chatContext.push("what you responded");
+        chatContext.push(history[i].response);
+    }
+
     // This function sends a POST request to the OpenAI API with the specified parameters
     fetch('https://api.openai.com/v1/completions', {
       method: 'POST',
@@ -42,7 +50,8 @@ function get_response() {
       },
       body: JSON.stringify({
         model: model,
-        prompt: question,
+        prompt: `using the previous context of our conversation: ${chatContext}, ${question}`,
+        // prompt: question,
         temperature: 0.5,
         max_tokens: 100,
       }),
@@ -51,7 +60,7 @@ function get_response() {
     .then(response => response.json())
     .then(data => {
         // This line stores the question and response in the history array
-        history.push({question: question, response: data.choices[0].text});
+        history.push({question: question, response: data.choices[0].text.trim()});
         // This line updates the HTML to display the current response and the history of questions and responses
         document.getElementById("response").innerHTML = data.choices[0].text;
         document.getElementById("history-list").innerHTML = "";
@@ -60,25 +69,35 @@ function get_response() {
             const historyDisplay = document.querySelector("#history-list");
 
             // Create new list item each for "User" (you), [your question], "AI Assistant", [its response]
-            const newLiUserLabel = document.createElement("li");
-            const newLiUserText = document.createElement("li");
-            const newLiResponseLabel = document.createElement("li");
-            const newLiResponseText = document.createElement("li");
+            const newUserLabel = document.createElement("p");
+            const newUserText = document.createElement("div");
+            const newResponseLabel = document.createElement("p");
+            const newResponseText = document.createElement("div");
+
+
+            for(let item of history) {
+                console.log(item);
+            }
+
 
             // Format the static labels
-            newLiUserLabel.innerText = "You";
-            newLiUserLabel.style.color = "black";
-            newLiUserLabel.style.fontWeight = "bold";
-            newLiResponseLabel.innerText = "AI Assistant";
-            newLiResponseLabel.style.color = "black";
-            newLiResponseLabel.style.fontWeight = "bold";
+            newUserLabel.innerText = "You";
+            newUserLabel.style.color = "black";
+            newUserLabel.style.fontWeight = "bold";
+            newUserLabel.classList.add("question");
+            newResponseLabel.innerText = "AI Assistant";
+            newResponseLabel.style.color = "black";
+            newResponseLabel.style.fontWeight = "bold";
+            newResponseLabel.classList.add("response");
 
             // Get the question and response data from history
-            newLiUserText.innerText = history[i].question
-            newLiResponseText.innerText = history[i].response
+            newUserText.classList.add("question");
+            newUserText.innerText = history[i].question;
+            newResponseText.classList.add("response");
+            newResponseText.innerText = history[i].response;
 
             // Display the new list items
-            const newLis = [newLiUserLabel, newLiUserText, newLiResponseLabel, newLiResponseText];
+            const newLis = [newUserLabel, newUserText, newResponseLabel, newResponseText];
             for(let li of newLis) {
                 historyDisplay.appendChild(li);
             }
