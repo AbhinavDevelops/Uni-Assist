@@ -104,7 +104,7 @@
 
 .footer {
     position: absolute;
-    top: 368%;
+    top: 355%;
 }
 
 /* TEXT */
@@ -318,7 +318,7 @@ h1 {
 
 #contact-form {
     position: absolute;
-    top: 340%;
+    top: 330%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
