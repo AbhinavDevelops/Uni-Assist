@@ -25,6 +25,10 @@
     border-radius: 10px;
     box-sizing: border-box;
     max-width: 40%;
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 10px;
   }
 
   p.question {
@@ -33,7 +37,8 @@
 
   div.question {
     align-self: flex-end;
-    background-color: lightblue;
+    background-color: #1900ff;
+    color: white;
     padding: 10px;
   }
 
@@ -43,9 +48,38 @@
 
   div.response {
     align-self: flex-start;
-    background-color: lightgreen;
+    background-color: #ffcc07;
     padding: 10px;
   }
+
+
+  div.question::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    margin-top: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #0006ff;
+    border-bottom: 10px solid transparent;
+  }
+
+  div.response::after {
+    content: "";
+    position: absolute;
+    top: 75%;
+    left: -10px; /* changed from right to left */
+    margin-top: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #ffcc07; /* changed from border-left to border-right */
+    border-bottom: 10px solid transparent;
+  }
+
+
 </style>
 
 <div id="chatbot">
