@@ -35,7 +35,7 @@ function get_response() {
     const model = 'text-davinci-003';
 
     let chatContext = [];
-    for (let i = 0; i < history.length; i++) {
+    for (let i = 0; i < history.length-1; i++) {
         chatContext.push(history[i].response);
     }
 
@@ -48,8 +48,8 @@ function get_response() {
       },
       body: JSON.stringify({
         model: model,
-        prompt: `${question}? Please use the your previous responses in our conversation, shown here:\n\n${chatContext}, `,
-        temperature: 1.1,
+        prompt: `${question}? This is our chat history, for context:\n${chatContext}, `,
+        temperature: 0.8,
         max_tokens: 250,
       }),
     })

@@ -58,7 +58,7 @@ def login():
         if user:
             
             session['username'] = user[1]
-            return render_template("index.html", userId=user[0])
+            return render_template("homepage.html", userId=user[0])
         else:
             return render_template('login.html', error='Invalid username or password. Please try again.')
 
