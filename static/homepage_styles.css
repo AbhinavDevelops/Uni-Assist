@@ -57,7 +57,7 @@
 .carousel {
     position: absolute;
     left: 50%;
-    top: 225%;
+    top: 250%;
     transform: translate(-50%, -50%);
 }
 
@@ -104,7 +104,7 @@
 
 .footer {
     position: absolute;
-    top: 325%;
+    top: 368%;
 }
 
 /* TEXT */
@@ -117,11 +117,11 @@ body {
 
 h1 {
     font-weight: 700;
-    font-size: 120px;
+    font-size: 100px;
 }
 
 #homepage_container {
-    margin: 10em;
+    margin: 5%;
 }
 
 #by-students {
@@ -129,7 +129,7 @@ h1 {
 }
 
 #UA-description {
-    font-size: 45px;
+    font-size: 40px;
     font-weight: 300;
     color: white;
 }
@@ -309,23 +309,23 @@ h1 {
 }
 
 .divider-1 {
-    top: 175%;
+    top: 195%;
 }
 
 .divider-2 {
-    top: 255%;
+    top: 280%;
 }
 
 #contact-form {
     position: absolute;
-    top: 300%;
+    top: 340%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #contact-us-h2 {
     position: absolute;
-    top: 272%;
+    top: 305%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 100px;
@@ -351,7 +351,7 @@ h1 {
 
 #features-h2 {
     position: absolute;
-    top: 115%;
+    top: 125%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 100px;
@@ -362,7 +362,7 @@ h1 {
     position: absolute;
     display: flex;
     left: 50%;
-    top: 140%;
+    top: 165%;
     transform: translate(-50%, -50%);
 }
 
