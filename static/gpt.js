@@ -48,9 +48,9 @@ function get_response() {
       },
       body: JSON.stringify({
         model: model,
-        prompt: `using the previous context of your responses: ${chatContext}, ${question}?`,
-        temperature: 1,
-        max_tokens: 100,
+        prompt: `${question}? Please use the your previous responses in our conversation, shown here:\n\n${chatContext}, `,
+        temperature: 1.1,
+        max_tokens: 250,
       }),
     })
     // This line parses the response from the API and extracts the generated text
@@ -86,11 +86,12 @@ function get_response() {
             newUserText.innerText = history[i].question;
             newResponseText.classList.add("response");
 
-            // Response if API returns nothing - happens occasionally
             let aiResponse = history[i].response;
+            //  Removes occasional random comma at the start of responses
             if (aiResponse.charAt(0) === ",") {
                 aiResponse = aiResponse.slice(1);
             }
+            // Response if API returns nothing - happens occasionally
             if (aiResponse !== "") {
                 newResponseText.innerText = aiResponse;
             }
