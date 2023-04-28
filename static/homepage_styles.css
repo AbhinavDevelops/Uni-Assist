@@ -104,7 +104,7 @@
 
 .footer {
     position: absolute;
-    top: 370%;
+    top: 360%;
 }
 
 /* TEXT */
@@ -115,16 +115,13 @@ body {
     padding: 0;
 }
 
-h1 {
-    font-weight: 700;
-    font-size: 100px;
-}
-
 #homepage_container {
     margin: 5%;
 }
 
 #by-students {
+    font-weight: 700;
+    font-size: 100px;
     color: white;
 }
 
@@ -334,7 +331,7 @@ h1 {
 
 #contact-anchor-point {
     position: absolute;
-    top: 265%;
+    top: 295%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
