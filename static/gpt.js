@@ -32,7 +32,7 @@ function get_response() {
     var question = document.getElementById("question").value;
 
     // This constant variable specifies which OpenAI model to use for generating the response
-    const model = 'text-davinci-002';
+    const model = 'text-davinci-003';
 
     let chatContext = [];
     for (let i = 0; i < history.length; i++) {
