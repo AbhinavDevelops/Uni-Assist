@@ -13,10 +13,6 @@
   console.log(localStorage.getItem('user-id'));
 </script>
 <script src="../static/gpt.js"></script>
-<style>
-
-</style>
-
 <div id="chatbot">
   <div id="chatbot-body">
     <div id="chatbot-body-messages"></div>
@@ -38,6 +34,14 @@
     <button onclick= clear_history()>Clear History</button>
     <div id="history">
       <ul id="history-list"></ul>
+    </div>
+  </div>
+
+  <div class="chat-bubble">
+    <div class="typing-indicator">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
 </div>
