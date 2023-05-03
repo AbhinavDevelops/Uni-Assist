@@ -164,7 +164,7 @@ tr:nth-child(even) {
 
 #pricing-container {
   position: absolute;
-  top: 65%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
@@ -247,7 +247,7 @@ div.pro-plan li {
 }
 
 div.unlimited-plan li {
-  color: #d1a90c;
+  color: #e8bb0a;
 }
 
 span.pricing-price {
