@@ -1,20 +1,12 @@
+body {
+  /*background-color: black;*/
+}
+
 #chatbot {
-  background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   font-family: sans-serif;
   margin: 0.75em;
-}
-
-#chatbot-header {
-  background-color: whitesmoke;
-  color: #333;
-  padding: 10px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 #chatbot-header-title {
