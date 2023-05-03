@@ -1,5 +1,6 @@
 body {
-  /*background-color: black;*/
+  background-color: white;
+  transition: all 0.4s ease-in-out;
 }
 
 #chatbot {
@@ -7,6 +8,7 @@ body {
   border-radius: 5px;
   font-family: sans-serif;
   margin: 0.75em;
+  transition: all 0.4s ease-in-out;
 }
 
 #chatbot-header-title {
@@ -59,16 +61,18 @@ body {
 
 #chatbot-body-input button {
   padding: 10px;
-  background-color: #2ecc71;
+  background-color: #132bb5;
   color: white;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
   margin-left: 10px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 #chatbot-body-input button:hover {
-  background-color: #27ae60;
+  background-color: #ffcc07;
+  color: black;
 }
 
 #response {
@@ -105,13 +109,19 @@ body {
 
 #chatbot-history button {
   padding: 10px;
-  background-color: #2ecc71;
+  background-color: #132bb5;
   color: white;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
   margin-right: 10px;
   cursor: pointer;
   float: right;
+  transition: all 0.3s ease-in-out;
+}
+
+#chatbot-history button:hover {
+  background-color: #ffcc07;
+  color: black;
 }
 
 nav {
@@ -400,10 +410,11 @@ div.response::after {
 
 .chat-bubble {
   position: relative;
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 40px;
+  transition: all 0.4s ease-in-out;
 }
 
 .typing-indicator {
@@ -438,4 +449,73 @@ div.response::after {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+/* DARK MODE */
+
+.dark-mode {
+  background-color: #27272f;
+}
+
+#chatbot.dark-mode {
+  box-shadow: 0 5px 15px rgba(255, 174, 0, 0.6);
+}
+
+#question-input.dark-mode {
+  background-color: #000000;
+  color: white;
+}
+
+#chatbot-body-input-button.dark-mode, #chatbot-history-button.dark-mode {
+  background-color: #525576;
+  color: white;
+}
+
+#question-input {
+  outline-color: #ffcc07;
+  transition: all 0.4s ease-in-out;
+}
+
+#question-input:focus {
+  outline-color: #0006ff;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background-color: black;
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  margin-left: 2025px;
+}
+
+.toggle-switch-handle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  border-radius: 50%;
+  background-image: url("graphics/sun.svg");
+  background-size: contain;
+  transition: all 0.3s ease-in-out;
+}
+
+.toggle-switch.on .toggle-switch-handle {
+  transform: translateX(-120%);
+  background-image: url("graphics/sun.svg");
+}
+
+.toggle-switch.off .toggle-switch-handle {
+  transform: translateX(120%);
+  background-image: url("graphics/moon.svg");
+  background-color: #525576;
+}
+
+.toggle-switch svg {
+  width: 100%;
+  height: 100%;
 }

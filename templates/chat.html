@@ -12,14 +12,14 @@
 
   console.log(localStorage.getItem('user-id'));
 </script>
-<script src="../static/gpt.js"></script>
+<script src="../static/app.js"></script>
 <div id="chatbot">
   <div id="chatbot-body">
     <div id="chatbot-body-messages"></div>
     <div id="chatbot-body-input">
       <input
               type="text"
-              id="question"
+              id="question-input"
               placeholder="Type your question here..."
       />
       <button id="chatbot-body-input-button">
@@ -30,8 +30,12 @@
   <div id="chatbot-response">
     <div id="response"></div>
   </div>
+  <div class="toggle-switch">
+    <div class="toggle-switch-handle">
+    </div>
+  </div>
   <div id="chatbot-history">
-    <button onclick= clear_history()>Clear History</button>
+    <button onclick= clear_history() id="chatbot-history-button">Clear History</button>
     <div id="history">
       <ul id="history-list"></ul>
     </div>
@@ -45,4 +49,5 @@
     </div>
   </div>
 </div>
+
 {% endblock %}
