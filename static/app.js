@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
     input.addEventListener('keydown', sendMessage);
     sendButton.addEventListener('click', sendMessage);
 
+    historyButton.addEventListener("click", () => {
+        history = [];
+        historyDisplay.innerHTML = "";
+    })
+
     async function sendMessage(event) {
         if (event.key === 'Enter' || event.type === "click") {
             showTypingIndicator();
@@ -64,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     model: model,
                     prompt: `This is our chat history, for context:"\n\n${chatContext}\n\n
                     Now, ${question}?"`,
-                    temperature: 0.6,
+                    temperature: 0.4,
                     max_tokens: 250,
                 }),
             })
@@ -117,7 +122,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 });
 
-function clear_history() {
-    history = [];
-    document.getElementById("history-list").innerHTML = "";
-}

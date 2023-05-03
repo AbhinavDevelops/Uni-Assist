@@ -481,14 +481,16 @@ div.response::after {
 }
 
 .toggle-switch {
-  position: relative;
+  position: absolute;
+  top: 200px;
+  right: 60px;
+  margin-top:10px;
   width: 60px;
   height: 30px;
   background-color: black;
   border-radius: 15px;
   cursor: pointer;
   overflow: hidden;
-  margin-left: 2025px;
 }
 
 .toggle-switch-handle {
