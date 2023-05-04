@@ -46,10 +46,10 @@ conn.close()
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    path = os.getcwd()+'/pfp'
-    print (path)
+    path = os.getcwd()+'/static'+'/pfp'
     if not os.path.isdir(path):
         os.mkdir(path) 
+    print (path)
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -78,7 +78,7 @@ def register():
         username = request.form['username']
         password = request.form['password']
         profile_pic = request.files['profile_pic']
-        profile_pic_path = os.getcwd()+'/pfp/'+profile_pic.filename
+        profile_pic_path = 'static'+'/pfp/'+profile_pic.filename
         profile_pic.save(profile_pic_path)
         # Check if username already exists in the database
         conn = sqlite3.connect('users.db')
