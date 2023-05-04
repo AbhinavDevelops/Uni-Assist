@@ -40,12 +40,16 @@
 </nav>
 <div id="register-page-no-navbar">
     <h1>Register</h1>
-    <form method="post" action="/register">
+    <form method="post" action="/register" enctype="multipart/form-data">
         <label for="username">Username:</label>
         <input type="text" name="username" id="username" required>
         <br>
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" required>
+        
+
+        <br>
+        <input type="file" name="profile_pic" id="profile_pic" accept="image/*">
         <br>
         <input type="submit" value="Register">
     </form>

@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
 from datetime import datetime
+import os
 
 app = Flask(__name__, static_url_path='/static', static_folder='static')
 app.secret_key = 'your_secret_key_here'
@@ -12,7 +13,8 @@ c = conn.cursor()
 c.execute('''CREATE TABLE IF NOT EXISTS users
              (id INTEGER PRIMARY KEY AUTOINCREMENT,
              username TEXT NOT NULL,
-             password TEXT NOT NULL)''')
+             password TEXT NOT NULL,
+             profile_pic_path TEXT)''')
 
 # Add sample user data
 sample_users = [('john', 'password123'), ('jane', 'myp@ssword')]
@@ -44,6 +46,10 @@ conn.close()
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    path = os.getcwd()+'/static'+'/pfp'
+    if not os.path.isdir(path):
+        os.mkdir(path) 
+    print (path)
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -58,6 +64,7 @@ def login():
         if user:
             
             session['username'] = user[1]
+            session['profile_pic_path'] = user[3]
             return render_template("homepage.html", userId=user[0])
         else:
             return render_template('login.html', error='Invalid username or password. Please try again.')
@@ -70,7 +77,9 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-
+        profile_pic = request.files['profile_pic']
+        profile_pic_path = 'static'+'/pfp/'+profile_pic.filename
+        profile_pic.save(profile_pic_path)
         # Check if username already exists in the database
         conn = sqlite3.connect('users.db')
         c = conn.cursor()
@@ -81,7 +90,7 @@ def register():
             conn.close()
             return render_template('register.html', error='Username already exists. Please choose a different username.')
         else:
-            c.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
+            c.execute("INSERT INTO users (username, password, profile_pic_path) VALUES (?, ?,?)", (username, password, profile_pic_path))
             conn.commit()
             conn.close()
             return redirect(url_for('index'))
