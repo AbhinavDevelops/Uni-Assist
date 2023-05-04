@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    const pfpPath = '../'+ sessionStorage.getItem('profile_pic_path');
+    console.log(pfpPath)
+
     const typingIndicator = document.querySelector(".typing-indicator");
 
     async function showTypingIndicator() {
@@ -32,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showTypingIndicator();
             const newUserLabel = document.createElement("p");
             const newUserText = document.createElement("div");
+            const newUserImg = document.createElement("img");
 
             newUserLabel.innerText = "You";
             newUserLabel.style.color = "black";
@@ -39,11 +43,23 @@ document.addEventListener('DOMContentLoaded', function() {
             newUserLabel.classList.add("question");
             newUserText.classList.add("question");
             newUserText.innerText = input.value;
+            newUserImg.src = pfpPath;
+            newUserImg.classList.add("profile-picture");
 
-            const newChatText = [newUserLabel, newUserText];
-            for (let text of newChatText) {
-                historyDisplay.appendChild(text);
-            }
+            const newUserContainer = document.createElement("div");
+            newUserContainer.classList.add("user-chat-container");
+
+            newUserContainer.appendChild(newUserImg);  // add the profile picture
+            newUserContainer.appendChild(newUserLabel);  // add the chat label
+            newUserContainer.appendChild(newUserText);  // add the chat text
+
+
+            const newChatText = [newUserContainer];  // add the container to the array
+    for (let text of newChatText) {
+        historyDisplay.appendChild(text);
+    }
+
+            
 
             get_response(input.value);
             input.value = "";
