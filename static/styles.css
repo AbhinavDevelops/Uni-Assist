@@ -521,3 +521,7 @@ div.response::after {
   width: 100%;
   height: 100%;
 }
+
+#login-page-no-navbar, #register-page-no-navbar {
+            margin: 1em;
+        }
