@@ -49,7 +49,6 @@ def login():
     path = os.getcwd()+'/static'+'/pfp'
     if not os.path.isdir(path):
         os.mkdir(path) 
-    print (path)
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
