@@ -1,3 +1,4 @@
+// Boolean function - returns true if the contact form is
 function isFormFilled(contactForm) {
     // Iterate over each form field
     for (let i = 0; i < contactForm.elements.length; i++) {
@@ -32,4 +33,3 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameInput = document.querySelector("#name");
     const contactForm = document.querySelector("#contact-form");
 })
-
