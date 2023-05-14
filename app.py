@@ -197,6 +197,10 @@ def new_topic():
     # Render the new topic page template
     return render_template('new_topic.html')
 
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
 
 @app.route("/pricing")
 def pricing():
