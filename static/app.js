@@ -130,15 +130,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const questionField = document.querySelector("#question-input");
         const chatBot = document.querySelector("#chatbot");
 
+        const darkmodeEnabledElements = [body, questionField, chatBot, sendButton, historyButton]
+
         // Logic for dark mode implementation in ai-chat page
         toggleSwitch.addEventListener('click', () => {
 
             toggleSwitch.classList.toggle('on');
-            body.classList.toggle("dark-mode");
-            questionField.classList.toggle("dark-mode");
-            chatBot.classList.toggle("dark-mode");
-            sendButton.classList.toggle("dark-mode");
-            historyButton.classList.toggle("dark-mode");
+            darkmodeEnabledElements.forEach(element => element.classList.toggle("dark-mode"));
             toggleSwitch.classList.toggle('off');
         });
 });
