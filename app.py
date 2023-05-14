@@ -27,10 +27,10 @@ conn.close()
 def homepage():
     return render_template("homepage.html")
 
-# @app.before_request
-# def check_url_path():
-#     if 'login' in request.path:
-#         return render_template('login.html', error=None)
+
+@app.route('/login')
+def index():
+    return render_template('login.html', error=None)
 
 
 # Connect to the SQLite database
@@ -43,30 +43,30 @@ conn.commit()
 conn.close()
 
 
-@app.route('/<path:login_path>', methods=['GET', 'POST'])
-def login(login_path):
-    if 'login' in login_path:
-        path = os.getcwd()+'/static'+'/pfp'
-        if not os.path.isdir(path):
-            os.mkdir(path)
-        if request.method == 'POST':
-            username = request.form['username']
-            password = request.form['password']
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    path = os.getcwd()+'/static'+'/pfp'
+    if not os.path.isdir(path):
+        os.mkdir(path)
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
 
-            # Check if username and password match in the database
-            conn = sqlite3.connect('users.db')
-            c = conn.cursor()
-            c.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
-            user = c.fetchone()
-            conn.close()
+        # Check if username and password match in the database
+        conn = sqlite3.connect('users.db')
+        c = conn.cursor()
+        c.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
+        user = c.fetchone()
+        conn.close()
 
-            if user:
+        if user:
 
-                session['username'] = user[1]
-                session['profile_pic_path'] = user[3]
-                return render_template("homepage.html", userId=user[0])
-            else:
-                return render_template('login.html', error='Invalid username or password. Please try again.')
+            session['username'] = user[1]
+            session['profile_pic_path'] = user[3]
+            return render_template("homepage.html", userId=user[0])
+        else:
+            return render_template('login.html', error='Invalid username or password. Please try again.')
+
     return render_template('login.html', error=None)
 
 
