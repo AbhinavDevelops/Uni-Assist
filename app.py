@@ -32,6 +32,10 @@ def homepage():
 def index():
     return render_template('login.html', error=None)
 
+@app.before_request
+def check_url_path():
+    if 'login' in request.path:
+        return render_template('login.html', error=None)
 
 
 # Connect to the SQLite database
@@ -166,7 +170,7 @@ def topic(topic_id):
     conn.close()
     
     # Render the topic page template and pass the topic and responses to it
-    return render_template('topic_template', topic=topic, responses=responses)
+    return render_template('topic_template.html', topic=topic, responses=responses)
 
 @app.route('/new_topic', methods=['GET', 'POST'])
 def new_topic():
