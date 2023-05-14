@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ topic[1] }}</h1>
+<p>{{ topic[2] }}</p>
+<p>Posted by: {{ topic[3] }}</p>
+<p>Posted on: {{ topic[4] }}</p>
+
+<h2>Responses</h2>
+<ul>
+    {% for response in responses %}
+    <li>
+        <p><span style="color: blue; font-weight: bold;">{{ response[3] }}</span>: {{ response[2] }}</p>
+
+        <p>Posted on: {{ response[4] }}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+<h2>Add Response</h2>
+<form method="post" action="{{ url_for('topic', topic_id=topic[0]) }}">
+    <textarea name="response" rows="5" cols="30"></textarea><br>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
