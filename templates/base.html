@@ -48,8 +48,17 @@
                 </li>
               <!-- display image saved in profile_pic_path for each user -->
                 <li class = "nav-item">
-                    <img id = "profile_pic" src="{{session.profile_pic_path}}" alt="profile_pic" width="50" height="50">
-            </ul>
+                    {% if session.profile_pic_path %}
+                    <img id="profile_pic" src="{{ session.profile_pic_path }}" alt="profile_pic" width="50" height="50">
+                  {% else %}
+                    <img id="profile_pic" src="../static/pfp/default.png" alt="profile_pic" width="50" height="50">
+                  {% endif %}
+                </li>
+
+                <li class = "nav-item">
+                    <a class="nav-link text-white" href="logout">Logout</a>
+                </li>
+                </ul>
             <img id="UWA-header-logo" src="../static/graphics/UWA_logo.png" alt="UWA logo"
             onclick="window.location = 'https://www.uwa.edu.au/'">
         </div>
