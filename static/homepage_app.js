@@ -32,4 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactDiv = document.querySelector("#contact-form-container");
     const nameInput = document.querySelector("#name");
     const contactForm = document.querySelector("#contact-form");
+
+    contactSubmit.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log()
+
+        const contactSubmitMessage = document.createElement("h4");
+        contactSubmitMessage.innerHTML = '<br>' + `Thank you for reaching out, ${nameInput.value}!` + '<br>';
+        contactSubmitMessage.style.color = "#0006ff";
+        contactForm.appendChild(contactSubmitMessage);
+    })
 })
