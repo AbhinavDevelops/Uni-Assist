@@ -1,3 +1,4 @@
+// App will only function once document object model is loaded
 document.addEventListener('DOMContentLoaded', function() {
 
     const pfpPath = '../'+ sessionStorage.getItem('profile_pic_path');
@@ -15,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Hide");
     }
 
+    // This is bad practice for production, would ideally use a secrets manager
+    // This key will be deprecated after group demo
     const apiKey = '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';
     let history = [];
 
@@ -46,9 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
             newUserImg.src = pfpPath;
             newUserImg.classList.add("profile-picture");
 
+            // For the visual output of chat history
             const newUserContainer = document.createElement("div");
             newUserContainer.classList.add("user-chat-container");
-
             newUserContainer.appendChild(newUserImg);  // add the profile picture
             newUserContainer.appendChild(newUserLabel);  // add the chat label
             newUserContainer.appendChild(newUserText);  // add the chat text
@@ -65,7 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
             input.value = "";
         }
     }
-
+        // Prompt engineering function, this feeds in the previous chat history in order to give
+        // the model context. This is required for high quality responses.
         function get_response(question) {
 
             const model = 'text-davinci-003';
@@ -126,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const questionField = document.querySelector("#question-input");
         const chatBot = document.querySelector("#chatbot");
 
+        // Logic for dark mode implementation in ai-chat page
         toggleSwitch.addEventListener('click', () => {
 
             toggleSwitch.classList.toggle('on');

@@ -9,8 +9,6 @@
   else {
     localStorage.setItem('user-id', null);
   }
-
-  console.log(localStorage.getItem('user-id'));
 </script>
 <script src="../static/app.js"></script>
 <div id="chatbot">
@@ -42,6 +40,7 @@
   </div>
 
   <div class="chat-bubble">
+    <!-- do not delete, these are animated while fetching repsonse -->
     <div class="typing-indicator">
       <span></span>
       <span></span>
