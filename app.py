@@ -60,11 +60,12 @@ def login():
         conn.close()
 
         if user:
-
             session['username'] = user[1]
             session['profile_pic_path'] = user[3]
-            return render_template("homepage.html", userId=user[0])
+            print("one")
+            return redirect(url_for('homepage'))
         else:
+            print("two")
             return render_template('login.html', error='Invalid username or password. Please try again.')
 
     return render_template('login.html', error=None)
