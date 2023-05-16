@@ -148,7 +148,7 @@ def topic(topic_id):
 
         if 'username' in session:
             username = session['username']
-        date = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        date = datetime.now().strftime("%d/%m/%Y %H:%M")
         conn = sqlite3.connect('forum.db')
         c = conn.cursor()
         c.execute("INSERT INTO responses (topic_id, response,author,date) VALUES (?, ?,?,?)", (topic_id, response, username, date))

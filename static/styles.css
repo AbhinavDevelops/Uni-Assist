@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+
 body {
   background-color: white;
   transition: all 0.4s ease-in-out;
+  font-family: 'Hind Siliguri', sans-serif;
 }
+
+.parent-container {
+  margin: 20px;
+}
+
 
 #chatbot {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -124,6 +132,18 @@ body {
   color: black;
 }
 
+/* FOOTER */
+
+#footer-row {
+  padding-top: 80px;
+}
+
+
+.footer {
+  position: absolute;
+  top: 385%;
+}
+
 /* NAVBAR */
 
 .nav-link, #profile_pic {
@@ -157,12 +177,6 @@ body {
   color: rgb(31, 76, 200) !important;
 }
 
-.chatbot-pricing {
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: Arial, sans-serif;
-}
 
 table {
   width: 100%;
@@ -187,9 +201,14 @@ tr:nth-child(even) {
 
 /* PRICING */
 
+#pricing-header {
+  margin: 20px auto;
+  text-align: center;
+}
+
 #pricing-container {
   position: absolute;
-  top: 70%;
+  top: 78%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
@@ -598,6 +617,12 @@ div.response::after {
 
 /* DISCUSSION BOARD */
 
+.page-header {
+  font-weight: 700;
+}
+
+
+
 #threads {
   margin: 1em;
 }
@@ -646,12 +671,13 @@ div.response::after {
 
 #threads button {
   margin-top: 10px;
-  background-color: #0079d3;
+  background-color: #0006ff;
   color: #fff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 #threads button a {
@@ -660,5 +686,40 @@ div.response::after {
 }
 
 #threads button:hover {
-  background-color: #005aac;
+  background-color: #ffcc07;
+}
+
+/* NEW TOPIC */
+
+form {
+  margin: 2em;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+  background-color: #0006ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+form input[type="submit"]:hover {
+  background-color: #ffcc07;
 }

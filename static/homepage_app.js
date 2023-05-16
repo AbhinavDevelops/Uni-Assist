@@ -32,14 +32,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactDiv = document.querySelector("#contact-form-container");
     const nameInput = document.querySelector("#name");
     const contactForm = document.querySelector("#contact-form");
+    const descriptionInput = document.querySelector("#description")
+
+    const contactSubmitMessage = document.createElement("h4");
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     contactSubmit.addEventListener("click", (e) => {
         e.preventDefault();
-        console.log()
 
-        const contactSubmitMessage = document.createElement("h4");
-        contactSubmitMessage.innerHTML = '<br>' + `Thank you for reaching out, ${nameInput.value}!` + '<br>';
-        contactSubmitMessage.style.color = "#0006ff";
+        let formIsFilled = true;
+
+
+        if (!descriptionInput.value) {
+            formIsFilled = false;
+        }
+
+        for (const inputField of contactForm.querySelectorAll("input")) {
+            if (!inputField.value) {
+                formIsFilled = false;
+            }
+        }
+        if (!formIsFilled) {
+            contactSubmitMessage.innerHTML = '<br>' + `Please fill out the form fully.` + '<br>';
+            contactSubmitMessage.style.color = "#ff0000";
+        }
+        else if (emailRegex.test(document.getElementById('email').value) === false) {
+            contactSubmitMessage.innerHTML = '<br>' + `Please enter a valid email.` + '<br>';
+            contactSubmitMessage.style.color = "#ff0000";
+        }
+        else {
+            contactSubmitMessage.innerHTML = '<br>' + `Thank you for reaching out, ${nameInput.value}!` + '<br>';
+            contactSubmitMessage.style.color = "#0006ff";
+            for (const inputField of contactForm.querySelectorAll("input")) {
+                inputField.value = "";
+            }
+            descriptionInput.value = "";
+        }
         contactForm.appendChild(contactSubmitMessage);
     })
 })
