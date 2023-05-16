@@ -106,7 +106,7 @@
     <script>
         sessionStorage.setItem('profile_pic_path', '{{ session.profile_pic_path }}');
     </script>
-    <!-- <script> console.log('{{session.username}}')</script> -->
+    <!-- remove access to ai chat / discussion if not signed in -->
     <script>
         $(document).ready(function() {
             var username = "{{ session.username }}";
@@ -119,6 +119,7 @@
             }
         });
     </script>
+    <!-- state dependent html rendering for logout and signin buttons -->
     <script>
         $(document).ready(function() {
             var username = "{{ session.username }}";
