@@ -533,3 +533,37 @@ div.response::after {
   flex-direction: column;
   align-items: flex-start;
 }
+
+#password-form input {
+  border-radius: 10px;
+}
+
+#login {
+  color: #ffcc07;
+  background-color: #0006ff;
+  border: none;
+  margin-bottom: 5px;
+  height: 35px;
+  width: 65px;
+}
+
+#username {
+  padding-left: 22px;
+  background-image: url('graphics/username.svg');
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  height: 30px;
+  border: 2px solid black;
+}
+
+#password {
+  margin-top: 10px;
+  padding-left: 22px;
+  background-image: url('graphics/password.svg');
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  height: 30px;
+  border: 2px solid black;
+}
