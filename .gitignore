@@ -1,6 +1,10 @@
 .DS_Store
+
+# VSCode build file
 .vscode
-users.db
+
+# User credential and forum databases
+*.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -183,7 +183,7 @@ def new_topic():
             username = session['username']
         conn = sqlite3.connect('forum.db')
 
-        current_date = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        current_date = datetime.now().strftime("%d/%m/%Y %H:%M")
 
         c = conn.cursor()
     
@@ -192,7 +192,7 @@ def new_topic():
         conn.close()
         
         # Redirect to the discussion page
-        return redirect(url_for('discussion.html'))
+        return redirect(url_for('discussion'))
     
     # Render the new topic page template
     return render_template('new_topic.html')

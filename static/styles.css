@@ -595,3 +595,70 @@ div.response::after {
 #profile_pic_input {
   padding: 2px;
 }
+
+/* DISCUSSION BOARD */
+
+#threads {
+  margin: 1em;
+}
+
+#threads h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#threads ul {
+  list-style: none;
+}
+
+#threads li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#threads li:nth-child(even) {
+  background-color: #cfe7ff; /* Pale blue background for every second thread */
+}
+
+#threads li:nth-child(odd) {
+  background-color: #fff3d1; /* Pale blue background for every second thread */
+}
+
+#threads li a {
+  text-decoration: none;
+  color: #333;
+}
+
+#threads li a:hover {
+  text-decoration: underline;
+}
+
+#threads li h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+#threads li p {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+#threads button {
+  margin-top: 10px;
+  background-color: #0079d3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#threads button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#threads button:hover {
+  background-color: #005aac;
+}

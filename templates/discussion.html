@@ -6,8 +6,7 @@
         <!-- Add your categories content here -->
     </section>
     <section id="threads">
-        <!-- Display list of threads within selected category -->
-        <h2>Threads</h2>
+        <h1>Discussion Board</h1>
         <ul>
             {% for topic in topics %}
             <li>
@@ -20,9 +19,9 @@
             </li>
             {% endfor %}
         </ul>
+        <button id = new_topic>
+            <a href="new_topic">New Topic</a>
+        </button>
     </section>
-    <button id = new_topic>
-        <a href="new_topic">New Topic</a>
-    </button>
 </main>
 {% endblock %}
