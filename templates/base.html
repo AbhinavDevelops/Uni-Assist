@@ -40,10 +40,10 @@
                     <a class="nav-link text-white" href="{{ url_for('homepage') }}#contact-anchor-point">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/login">Sign-In</a>
+                    <a class="nav-link text-white signin-nav-item" href="/login">Sign-In</a>
                 </li>
                 <li class = "nav-item">
-                    <p id="user_name" class="nav-link text-black">{{session.username}} </p>
+                    <p id="user_name" class="nav-link text-black current-user">{{session.username}} </p>
                 </li>
               <!-- display image saved in profile_pic_path for each user -->
                 <li class = "nav-item">
@@ -55,7 +55,7 @@
                 </li>
 
                 <li class = "nav-item">
-                    <a class="nav-link text-white" href="logout">Logout</a>
+                    <a class="nav-link text-white logout-nav-item" href="logout">Logout</a>
                 </li>
                 </ul>
             <img id="UWA-header-logo" src="../static/graphics/UWA_logo.png" alt="UWA logo"
@@ -105,6 +105,32 @@
     crossorigin="anonymous"></script>
     <script>
         sessionStorage.setItem('profile_pic_path', '{{ session.profile_pic_path }}');
+    </script>
+    <!-- remove access to ai chat / discussion if not signed in -->
+    <script>
+        $(document).ready(function() {
+            var username = "{{ session.username }}";
+            var currentPath = window.location.pathname;
+            var restrictedPaths = ["/ai-chat", "/discussion"];
+            var isLoggedIn = (username !== "");
+
+            if (!isLoggedIn && restrictedPaths.includes(currentPath)) {
+                window.location.href = "/login";
+            }
+        });
+    </script>
+    <!-- state dependent html rendering for logout and signin buttons -->
+    <script>
+        $(document).ready(function() {
+            var username = "{{ session.username }}";
+            if (username === "") {
+                $(".logout-nav-item").hide();
+                $(".signin-nav-item").show();
+            } else {
+                $(".logout-nav-item").show();
+                $(".signin-nav-item").hide();
+            }
+        });
     </script>
 </body>
 </html>
