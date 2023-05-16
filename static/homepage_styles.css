@@ -73,27 +73,6 @@
     border-radius: 15%;
 }
 
-/* NAVBAR */
-
-.nav-link {
-    margin-right: 10px;
-    font-size: 21px;
-}
-
-#navbarNav {
-    display: inline-block;
-    margin-bottom: 5px;
-    z-index: 1;
-}
-
-#main-navbar {
-    background-color: #f4aa00;
-    height: 95px;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-    color: rgb(31, 76, 200) !important;
-}
 
 /* FOOTER */
 

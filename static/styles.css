@@ -124,8 +124,36 @@ body {
   color: black;
 }
 
-nav {
-  height: 65px;
+/* NAVBAR */
+
+.nav-link, #profile_pic {
+  margin-right: 10px;
+  margin-top: 12px;
+  font-size: 21px;
+}
+
+#profile_pic {
+  border-radius: 10px;
+}
+
+#user_name {
+  margin-left: 200px;
+  margin-top: 18px;
+  margin-right: 20px;
+  color: black;
+  text-transform: capitalize;
+  font-size: 25px;
+}
+
+
+#navbarNav {
+  display: inline-block;
+  z-index: 1;
+}
+
+#main-navbar {
+  background-color: #f4aa00;
+  height: 90px;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
