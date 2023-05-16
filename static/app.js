@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
             newUserText.innerText = input.value;
             newUserImg.src = pfpPath;
             newUserImg.classList.add("profile-picture");
+            newUserImg.style.width = "50px";
+            newUserImg.style.height = "50px";
 
             // For the visual output of chat history
             const newUserContainer = document.createElement("div");
