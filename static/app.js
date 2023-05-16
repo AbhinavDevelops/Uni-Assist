@@ -61,9 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let text of newChatText) {
         historyDisplay.appendChild(text);
     }
-
-            
-
             get_response(input.value);
             input.value = "";
         }

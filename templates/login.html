@@ -6,11 +6,10 @@
     <p style="color: red;">{{ error }}</p>
     {% endif %}
     <form method="post" action="/login" id="password-form">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
+        <label for="username"></label>
+        <input type="text" name="username" id="username" placeholder="Username" required>
+        <label for="password"></label>
+        <input type="password" name="password" id="password" placeholder="Password "required>
         <br>
         <input type="submit" value="Login">
     </form>
