@@ -106,7 +106,19 @@
     <script>
         sessionStorage.setItem('profile_pic_path', '{{ session.profile_pic_path }}');
     </script>
-    <script> console.log('{{session.username}}')</script>
+    <!-- <script> console.log('{{session.username}}')</script> -->
+    <script>
+        $(document).ready(function() {
+            var username = "{{ session.username }}";
+            var currentPath = window.location.pathname;
+            var restrictedPaths = ["/ai-chat", "/discussion"];
+            var isLoggedIn = (username !== "");
+
+            if (!isLoggedIn && restrictedPaths.includes(currentPath)) {
+                window.location.href = "/login";
+            }
+        });
+    </script>
     <script>
         $(document).ready(function() {
             var username = "{{ session.username }}";
