@@ -10,6 +10,9 @@ body {
   margin: 20px;
 }
 
+.page-header {
+  font-weight: 700;
+}
 
 #chatbot {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -175,24 +178,6 @@ body {
 
 .navbar-nav .nav-item > a:hover {
   color: rgb(31, 76, 200) !important;
-}
-
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-th {
-  background-color: #f2f2f2;
-  text-align: left;
-  padding: 8px;
-}
-
-td {
-  border: 1px solid #ddd;
-  padding: 8px;
 }
 
 tr:nth-child(even) {
@@ -566,16 +551,13 @@ div.response::after {
   height: 100%;
 }
 
-#login-page-no-navbar, #register-page-no-navbar {
-  margin: 1em;
-}
-
 /* LOGIN PAGE */
 
 #login-form, #registration-form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-left: 0;
 }
 
 #login-form input, #registration-form input {
@@ -583,11 +565,16 @@ div.response::after {
 }
 
 #login-button, #register-button {
-  color: #ffcc07;
+  color: #fff;
   background-color: #0006ff;
   border: none;
   margin-bottom: 5px;
-  padding: 5px 10px;
+  padding: 6px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+#login-button:hover, #register-button:hover {
+  background-color: #2451e5;
 }
 
 #username {
@@ -598,6 +585,7 @@ div.response::after {
   background-size: 20px;
   height: 30px;
   border: 2px solid black;
+  width: 200px;
 }
 
 #password {
@@ -617,9 +605,7 @@ div.response::after {
 
 /* DISCUSSION BOARD */
 
-.page-header {
-  font-weight: 700;
-}
+
 
 
 
