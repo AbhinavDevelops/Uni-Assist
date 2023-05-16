@@ -112,6 +112,10 @@
             var username = "{{ session.username }}";
             if (username === "") {
                 $(".logout-nav-item").hide();
+                $(".signin-nav-item").show();
+            } else {
+                $(".logout-nav-item").show();
+                $(".signin-nav-item").hide();
             }
         });
     </script>
