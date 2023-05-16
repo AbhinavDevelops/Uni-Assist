@@ -137,11 +137,9 @@ body {
 }
 
 #user_name {
-  margin-left: 200px;
-  margin-right: 20px;
-  color: black;
+  margin-left: 210px;
+  margin-right: 15px;
   text-transform: capitalize;
-  font-size: 25px;
 }
 
 
