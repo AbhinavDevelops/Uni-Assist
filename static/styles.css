@@ -528,23 +528,22 @@ div.response::after {
 
 /* LOGIN PAGE */
 
-#password-form {
+#login-form, #registration-form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-#password-form input {
-  border-radius: 10px;
+#login-form input, #registration-form input {
+  border-radius: 8px;
 }
 
-#login {
+#login-button, #register-button {
   color: #ffcc07;
   background-color: #0006ff;
   border: none;
   margin-bottom: 5px;
-  height: 35px;
-  width: 65px;
+  padding: 5px 10px;
 }
 
 #username {
@@ -566,4 +565,8 @@ div.response::after {
   background-size: 20px;
   height: 30px;
   border: 2px solid black;
+}
+
+#profile_pic_input {
+  padding: 2px;
 }

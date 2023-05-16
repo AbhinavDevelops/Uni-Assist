@@ -2,18 +2,16 @@
 {% block content %}
 <div id="register-page-no-navbar">
     <h1>Register</h1>
-    <form method="post" action="/register" enctype="multipart/form-data">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required>
+    <form method="post" action="/register" enctype="multipart/form-data" id="registration-form">
+        <label for="username"></label>
+        <input type="text" name="username" id="username" placeholder="Username" required>
+        <label for="password"></label>
+        <input type="password" name="password" id="password" placeholder="Password "required>
         <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
-
-
+        <label for="profile_pic_input"><b>Profile Picture</b></label>
+        <input type="file" name="profile_pic" id="profile_pic_input" accept="image/*" placeholder="hiasdlas">
         <br>
-        <input type="file" name="profile_pic" id="profile_pic" accept="image/*">
-        <br>
-        <input type="submit" value="Register">
+        <input type="submit" value="Register" id="register-button">
     </form>
     <p>Already have an account? <a href="../login">Login</a></p>
 </div>
