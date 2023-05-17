@@ -56,11 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
             newUserContainer.appendChild(newUserText);  // add the chat text
 
             const newChatText = [newUserContainer];  // add the container to the array
-    for (let text of newChatText) {
-        historyDisplay.appendChild(text);
-    }
-            get_response(input.value);
-            input.value = "";
+            for (let text of newChatText) {
+                historyDisplay.appendChild(text);
+            }
+                    get_response(input.value);
+                    input.value = "";
         }
     }
         // Prompt engineering function, this feeds in the previous chat history in order to give
