@@ -112,7 +112,7 @@ body {
 }
 
 .profile-picture {
-  width: 40px;
+  width: 30px;
   height: 40px;
   border-radius: 10px;
   margin-bottom: 5px;
@@ -124,8 +124,13 @@ div.question {
   padding: 10px;
 }
 
+p.question {
+  font-weight: bold;
+}
+
 p.response {
   align-self: flex-start;
+  font-weight: bold;
 }
 
 div.response {
@@ -922,7 +927,7 @@ body {
 
 #contact-form {
   position: absolute;
-  top: 335%;
+  top: 340%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -937,7 +942,7 @@ body {
 
 #contact-anchor-point {
   position: absolute;
-  top: 295%;
+  top: 290%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
