@@ -46,9 +46,11 @@ def login():
 
         if user:
             session['username'] = user[1]
+            print (user[3])
             if user[3] == None or user[3] == "" or os.path.isfile(user[3]) == False:
-                session['profile_pic_path'] = 'static'+'/pfp/'+'default.png'
-            session['profile_pic_path'] = user[3]
+                session['profile_pic_path'] = '../static'+'/pfp/'+'default.png'
+            else:
+                session['profile_pic_path'] = user[3]
             return redirect(url_for('homepage'))
         else:
             return render_template('login.html', error='Invalid username or password. Please try again.')
@@ -62,9 +64,6 @@ def register():
         username = request.form['username']
         password = request.form['password']
         profile_pic = request.files['profile_pic']
-        profile_pic_path = 'static'+'/pfp/'+profile_pic.filename
-        if profile_pic.filename != "":
-            profile_pic.save(profile_pic_path)
         # Check if username already exists in the database
         conn = sqlite3.connect('users.db')
         c = conn.cursor()
@@ -75,12 +74,15 @@ def register():
             conn.close()
             return render_template('register.html', error='Username already exists. Please choose a different username.')
         else:
+            profile_pic_path = 'static'+'/pfp/'+profile_pic.filename
+            if profile_pic.filename != "":
+                profile_pic.save(profile_pic_path)
             c.execute("INSERT INTO users (username, password, profile_pic_path) VALUES (?, ?,?)", (username, password, profile_pic_path))
             conn.commit()
             conn.close()
             return redirect(url_for('index'))
     else:
-        return render_template('register.html', error=None)
+        return render_template('register.html', error = None)
     
 
 
@@ -134,6 +136,7 @@ def topic(topic_id):
 
         if 'username' in session:
             username = session['username']
+        print (session['profile_pic_path'])
         date = datetime.now().strftime("%d/%m/%Y %H:%M")
         conn = sqlite3.connect('forum.db')
         c = conn.cursor()
