@@ -100,7 +100,7 @@ body {
 #history-list div {
   border-radius: 10px;
   box-sizing: border-box;
-  max-width: 100%;
+  max-width: 650px;
   display: inline-block;
   position: relative;
   margin-right: 20px;
@@ -113,7 +113,7 @@ body {
 
 .profile-picture {
   width: 30px;
-  height: 40px;
+  height: auto;
   border-radius: 10px;
   margin-bottom: 5px;
 }
@@ -139,15 +139,12 @@ div.response {
   padding: 10px;
 }
 
-
 div.question::after {
   content: "";
   position: absolute;
   top: 50%;
   right: -10px;
   margin-top: -10px;
-  width: 0;
-  height: 0;
   border-top: 10px solid transparent;
   border-left: 10px solid #0006ff;
   border-bottom: 10px solid transparent;
@@ -159,8 +156,6 @@ div.response::after {
   top: 50%;
   left: -10px;
   margin-top: -10px;
-  width: 0;
-  height: 0;
   border-top: 10px solid transparent;
   border-right: 10px solid #ffcc07;
   border-bottom: 10px solid transparent;
@@ -456,6 +451,10 @@ button.is-featured:hover {
 #chatbot-body-input-button.dark-mode, #chatbot-history-button.dark-mode {
   background-color: #525576;
   color: white;
+}
+
+p.question.dark-mode {
+  color: orange;
 }
 
 #question-input {

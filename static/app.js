@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const AIPfp = document.createElement("img");
 
                     // Set AI profile picture
-                    AIPfp.src= "../static/graphics/Jeffrey.png"
+                    AIPfp.src= "../static/graphics/Jeffrey_yellow.png"
                     AIPfp.classList.add("profile-picture");
                     AIPfp.style.alignSelf = "flex-start";
 
@@ -169,11 +169,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const chatBot = document.querySelector("#chatbot");
         const darkmodeEnabledElements = [body, questionField, chatBot, sendButton, historyButton]
 
+
         // Logic for dark mode implementation in ai-chat page
         toggleSwitch.addEventListener('click', () => {
             toggleSwitch.classList.toggle('on');
             darkmodeEnabledElements.forEach(element => element.classList.toggle("dark-mode"));
             toggleSwitch.classList.toggle('off');
+
+            const userLabels = document.querySelectorAll("p.question")
+            const AILabels = document.querySelectorAll("p.response")
+            for (let element of userLabels) {
+                element.style.color = "white";
+            }
+            for (let element of AILabels) {
+                element.style.color = "white";
+            }
         });
 });
 
