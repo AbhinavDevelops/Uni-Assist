@@ -1019,3 +1019,9 @@ body {
 .divider-2 {
   top: 280%;
 }
+
+
+.error-message {
+  position: absolute;
+  color: red;
+}
