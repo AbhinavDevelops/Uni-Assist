@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     const pfpPath = '../'+ sessionStorage.getItem('profile_pic_path');
-    console.log(pfpPath)
 
     const typingIndicator = document.querySelector(".typing-indicator");
 
@@ -40,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const newUserText = document.createElement("div");
             const newUserImg = document.createElement("img");
 
-            newUserLabel.innerText = "You";
+                newUserLabel.innerText = "You";
             newUserLabel.style.color = "black";
             newUserLabel.style.fontWeight = "bold";
             newUserLabel.classList.add("question");
@@ -58,13 +57,12 @@ document.addEventListener('DOMContentLoaded', function() {
             newUserContainer.appendChild(newUserLabel);  // add the chat label
             newUserContainer.appendChild(newUserText);  // add the chat text
 
-
             const newChatText = [newUserContainer];  // add the container to the array
-    for (let text of newChatText) {
-        historyDisplay.appendChild(text);
-    }
-            get_response(input.value);
-            input.value = "";
+            for (let text of newChatText) {
+                historyDisplay.appendChild(text);
+            }
+                    get_response(input.value);
+                    input.value = "";
         }
     }
         // Prompt engineering function, this feeds in the previous chat history in order to give
@@ -88,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     model: model,
                     prompt: `This is our chat history, for context:"\n\n${chatContext}\n\n
                     Now, ${question}?"`,
-                    temperature: 0.4,
+                    temperature: 0.1,
                     max_tokens: 250,
                 }),
             })
@@ -96,6 +94,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(data => {
                     const newResponseLabel = document.createElement("p");
                     const newResponseText = document.createElement("div");
+                    const AIPfp = document.createElement("img");
+                    AIPfp.src= "../static/graphics/Jeffrey.png"
+                    AIPfp.classList.add("profile-picture");
+                    AIPfp.style.alignSelf = "flex-start";
 
                     newResponseLabel.innerText = "AI Assistant";
                     newResponseLabel.style.color = "black";
@@ -113,9 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         newResponseText.innerText = "Please try asking that again, or try a different question."
                     }
 
-                    const newChatText = [newResponseLabel, newResponseText];
-                    for (let text of newChatText) {
-                        historyDisplay.appendChild(text);
+                    const newChatText = [AIPfp, newResponseLabel, newResponseText];
+                    for (let newElement of newChatText) {
+                        historyDisplay.appendChild(newElement);
                     }
                     hideTypingIndicator();
                     history.push({question: question, response: data.choices[0].text.trim()});

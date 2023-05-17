@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
 
+/* GLOBAL STYLING */
+
 body {
-  background-color: white;
   transition: all 0.4s ease-in-out;
   font-family: 'Hind Siliguri', sans-serif;
 }
 
 .parent-container {
   margin: 20px;
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 60px;
 }
 
 .page-header {
@@ -15,26 +19,13 @@ body {
   font-size: 60px;
 }
 
+/* AI CHAT STYLING */
+
 #chatbot {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
-  font-family: sans-serif;
   margin: 0.75em;
   transition: all 0.4s ease-in-out;
-}
-
-#chatbot-header-title {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-#navbar-logo-link {
-  margin-left: 20px;
-}
-
-#chatbot-header-close {
-  font-size: 24px;
-  cursor: pointer;
 }
 
 #chatbot-body {
@@ -45,44 +36,47 @@ body {
   margin: 1em;
 }
 
-#chatbot-response > h2, #chatbot-history > h2{
-  font-weight: bold;
-  font-size: 18px;
-}
-
-#chatbot-body-messages {
-  max-height: 200px;
-  overflow-y: scroll;
-}
-
-#chatbot-body-messages p {
-  margin: 0 0 10px;
-}
-
 #chatbot-body-input {
   display: flex;
   margin-top: 10px;
 }
 
-#chatbot-body-input input[type="text"] {
+#chatbot-body-input input {
   flex: 1;
   padding: 10px;
-  border-radius: 3px;
-  border: none;
+  border-radius: 5px;
+  border: 2px solid lightgrey;
+  margin-right: 2px;
 }
 
 #chatbot-body-input button {
   padding: 10px;
+  margin-right: 5px;
   background-color: #132bb5;
   color: white;
   border: none;
   border-radius: 5px;
-  margin-left: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
 #chatbot-body-input button:hover {
+  background-color: #ffcc07;
+  color: black;
+}
+
+#chatbot-history button {
+  padding: 10px;
+  background-color: #132bb5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+  transition: all 0.3s ease-in-out;
+}
+
+#chatbot-history button:hover {
   background-color: #ffcc07;
   color: black;
 }
@@ -95,106 +89,137 @@ body {
   color: #333;
 }
 
-#UWA-header-logo {
-  width: 8vi;
-  height: auto;
-  margin-left: auto;
-  margin-right: 5vi;
+#history-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 30px;
+  margin: 30px;
 }
 
-#UWA-header-logo {
-  cursor: pointer;
+#history-list div {
+  border-radius: 10px;
+  box-sizing: border-box;
+  max-width: 100%;
+  display: inline-block;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 10px;
 }
 
-
-#history-list li:nth-child(2n) {
-  color: red;
-  list-style-type: none;
-  padding: 0;
+.question {
+  align-self: flex-end;
 }
 
-#history-list li:nth-child(2n+1) {
-  color: blue;
-  list-style-type: none;
-  padding: 0;
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  margin-bottom: 5px;
 }
 
-#chatbot-history button {
-  padding: 10px;
-  background-color: #132bb5;
+div.question {
+  background-color: #1900ff;
   color: white;
-  border: none;
-  border-radius: 5px;
-  margin-right: 10px;
-  cursor: pointer;
-  float: right;
-  transition: all 0.3s ease-in-out;
+  padding: 10px;
 }
 
-#chatbot-history button:hover {
+p.response {
+  align-self: flex-start;
+}
+
+div.response {
+  align-self: flex-start;
   background-color: #ffcc07;
-  color: black;
+  padding: 10px;
+}
+
+
+div.question::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  margin-top: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #0006ff;
+  border-bottom: 10px solid transparent;
+}
+
+div.response::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  margin-top: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 10px solid #ffcc07;
+  border-bottom: 10px solid transparent;
 }
 
 /* FOOTER */
 
 #footer-row {
-  padding-top: 80px;
+  padding-top: 75px;
+  max-height: 400px;
 }
-
 
 .footer {
   position: absolute;
   top: 385%;
+  height: 565px;
 }
 
 /* NAVBAR */
-
-.nav-link, #profile_pic {
-  margin-right: 10px;
-  margin-top: 12px;
-  font-size: 21px;
-}
-
-#profile_pic {
-  border-radius: 10px;
-}
-
-#user_name {
-  margin-left: 210px;
-  margin-right: 15px;
-  text-transform: capitalize;
-}
-
-
-#navbarNav {
-  display: inline-block;
-  z-index: 1;
-}
 
 #main-navbar {
   background-color: #f4aa00;
   height: 90px;
 }
 
-.navbar-nav .nav-item > a:hover {
-  color: rgb(31, 76, 200) !important;
+.nav-link, #user_name {
+  margin: 10px 0 10px 10px;
+  font-size: 21px;
+  padding: 0;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+.nav-item {
+  width: 20%;
+}
+
+.nav-item a {
+  transition: all 0.3s ease-in-out;
+}
+
+#user_name {
+  position: relative;
+  margin-left: 200px;
+  text-transform: capitalize;
+}
+
+#profile_pic {
+  margin-left: 4em;
+  border-radius: 10px;
+}
+
+.navbar-nav .nav-item > a:hover {
+  color: rgb(31, 76, 200) !important;
 }
 
 /* PRICING */
 
 #pricing-header {
-  margin: 20px auto;
+  margin: 40px auto;
   text-align: center;
 }
 
 #pricing-container {
-  position: absolute;
-  top: 78%;
+  position: relative;
+  top: 425px;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
@@ -204,6 +229,7 @@ tr:nth-child(even) {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  font-family: 'Hind Siliguri', sans-serif;
 }
 
 div.pricing-table {
@@ -221,7 +247,7 @@ div.pricing-table {
 div.pricing-plan {
   display: flex;
   flex-direction: column;
-  /*width: 320px;*/
+  width: 320px;
   align-items: center;
   flex: 1 4 320px;
   padding: 2em 2em;
@@ -242,7 +268,6 @@ img.pricing-img {
 
 h2.pricing-header {
   font-weight: 700;
-  font-family: 'Open Sans', sans-serif;
   color: #8e8e8e;
   font-size: 1.5em;
   text-transform: uppercase;
@@ -262,7 +287,6 @@ ul.pricing-features {
 
 li.pricing-features-item {
   font-weight: 600;
-  font-family: 'Open Sans', sans-serif;
   font-size: 0.9em;
   text-transform: uppercase;
   list-style: none;
@@ -282,7 +306,6 @@ div.unlimited-plan li {
 
 span.pricing-price {
   font-weight: 700;
-  font-family: 'Open Sans', sans-serif;
   color: #016ff9;
   font-size: 2em;
   text-transform: uppercase;
@@ -301,7 +324,6 @@ button.pricing-button a {
   text-decoration: none;
   font-weight: 500;
   font-size: 15px;
-  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
 }
 
@@ -367,73 +389,6 @@ button.is-featured:hover {
   img.pricing-img {
     width: 80%;
   }
-}
-
-/* CHATBOT RESTYLING */
-
-#history-list {
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  margin: 30px;
-}
-
-#history-list > div {
-  border-radius: 10px;
-  box-sizing: border-box;
-  max-width: 40%;
-  display: inline-block;
-  position: relative;
-  margin-right: 20px;
-  margin-bottom: 10px;
-}
-
-p.question {
-  align-self: flex-end;
-}
-
-div.question {
-  align-self: flex-end;
-  background-color: #1900ff;
-  color: white;
-  padding: 10px;
-}
-
-p.response {
-  align-self: flex-start;
-}
-
-div.response {
-  align-self: flex-start;
-  background-color: #ffcc07;
-  padding: 10px;
-}
-
-
-div.question::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -10px;
-  margin-top: -10px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-left: 10px solid #0006ff;
-  border-bottom: 10px solid transparent;
-}
-
-div.response::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -10px; /* changed from right to left */
-  margin-top: -10px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-right: 10px solid #ffcc07; /* changed from border-left to border-right */
-  border-bottom: 10px solid transparent;
 }
 
 /* TYPING ANIMATION */
@@ -513,7 +468,7 @@ div.response::after {
 .toggle-switch {
   position: absolute;
   top: 200px;
-  right: 60px;
+  right: 30px;
   margin-top:10px;
   width: 60px;
   height: 30px;
@@ -605,10 +560,6 @@ div.response::after {
 }
 
 /* DISCUSSION BOARD */
-
-
-
-
 
 #threads {
   margin: 1em;
@@ -744,21 +695,20 @@ form input[type="submit"]:hover {
   width: 165px;
   height: auto;
   margin-left: auto;
-  margin-right: 80px;
+  margin-right: 60px;
+  cursor: pointer;
 }
 
 #UA-footer-logo {
-  position: absolute;
-  bottom: 50%;
-  left: 10%;
+  position: relative;
+  bottom: 35px;
   width: 400px;
   height: auto;
 }
 
 #UWA-footer-logo {
-  position: absolute;
-  top: 33%;
-  left: 13%;
+  position: relative;
+  bottom: 100px;
   width: 285px;
   height: auto;
 }
@@ -785,7 +735,7 @@ form input[type="submit"]:hover {
 }
 
 
-/* TEXT */
+/* HOMEPAGE TEXT */
 
 body {
   margin: 0;
@@ -851,7 +801,7 @@ body {
   transition: color 0.3s ease-in-out;
 }
 
-/* BACKGROUND ANIMATIONS */
+/* HOMEPAGE BACKGROUND ANIMATIONS */
 
 #background-wrapper {
   position: absolute;
@@ -942,6 +892,7 @@ body {
   animation: animate 5s linear infinite;
 }
 
+/* BOBBING SCROLL ARROW */
 
 #page-arrow {
   position: fixed;
@@ -971,23 +922,6 @@ body {
 }
 
 /* CONTACT FORM */
-
-.light-grey-divider {
-  width: 13%;
-  height: 1px;
-  background-color: lightgrey;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.divider-1 {
-  top: 195%;
-}
-
-.divider-2 {
-  top: 280%;
-}
 
 #contact-form {
   position: absolute;
@@ -1019,7 +953,7 @@ body {
   color: darkblue;
 }
 
-/* FEATURES */
+/* FEATURES PANELS WITH ANIMATIONS */
 
 #features-h2 {
   position: absolute;
@@ -1058,11 +992,28 @@ body {
 .feature:nth-child(1) {
   transition-delay: 200ms;
 }
-
 .feature:nth-child(2) {
   transition-delay: 400ms;
 }
-
 .feature:nth-child(3) {
   transition-delay: 500ms;
+}
+
+/* HOMEPAGE DIVIDERS */
+
+.light-grey-divider {
+  width: 13%;
+  height: 1px;
+  background-color: lightgrey;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.divider-1 {
+  top: 195%;
+}
+
+.divider-2 {
+  top: 280%;
 }
