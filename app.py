@@ -51,6 +51,8 @@ def login():
 
         if user:
             session['username'] = user[1]
+            if user[3] == None or user[3] == "" or os.path.isfile(user[3]) == False:
+                session['profile_pic_path'] = 'static'+'/pfp/'+'default.png'
             session['profile_pic_path'] = user[3]
             return redirect(url_for('homepage'))
         else:
@@ -66,7 +68,8 @@ def register():
         password = request.form['password']
         profile_pic = request.files['profile_pic']
         profile_pic_path = 'static'+'/pfp/'+profile_pic.filename
-        profile_pic.save(profile_pic_path)
+        if profile_pic.filename != "":
+            profile_pic.save(profile_pic_path)
         # Check if username already exists in the database
         conn = sqlite3.connect('users.db')
         c = conn.cursor()
