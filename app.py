@@ -44,8 +44,8 @@ def login():
             session['username'] = user[1]
             if user[3] == None or user[3] == "" or os.path.isfile(user[3]) == False:
                 session['profile_pic_path'] = '/static'+'/pfp/'+'default.png'
-                session['profile_pic_path'] = 'HERE 1'
-            session['profile_pic_path'] = '/' + user[3]
+            else:
+                session['profile_pic_path'] = '/' + user[3]
             return redirect(url_for('homepage'))
         # Otherwise show an error and remain on login page
         else:
