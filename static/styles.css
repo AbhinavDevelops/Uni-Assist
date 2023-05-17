@@ -182,13 +182,10 @@ div.response::after {
 }
 
 .nav-link, #user_name {
-  margin: 10px 0 10px 10px;
+  margin-left: 10px;
+  margin-top: 10px;
   font-size: 21px;
   padding: 0;
-}
-
-.nav-item {
-  width: 20%;
 }
 
 .nav-item a {
@@ -202,7 +199,7 @@ div.response::after {
 }
 
 #profile_pic {
-  margin-left: 4em;
+  margin-left: 2em;
   border-radius: 10px;
 }
 
