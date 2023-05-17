@@ -22,14 +22,10 @@ c.execute('''CREATE TABLE IF NOT EXISTS users
 def homepage():
     return render_template("homepage.html")
 
-# Routing to login page (needed for post-login redirect)
-@app.route('/login')
-def index():
-    return render_template('login.html', error=None)
-
 # Routing to login page with user authentication
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    # Get profile picture path
     path = os.getcwd()+'/static'+'/pfp'
     if not os.path.isdir(path):
         os.mkdir(path)
@@ -44,18 +40,20 @@ def login():
         user = c.fetchone()
         conn.close()
 
+        # If there's a match, redirect to homepage and update profile picture displayed
         if user:
             session['username'] = user[1]
             if user[3] == None or user[3] == "" or os.path.isfile(user[3]) == False:
                 session['profile_pic_path'] = 'static'+'/pfp/'+'default.png'
             session['profile_pic_path'] = user[3]
             return redirect(url_for('homepage'))
+        # Otherwise show an error and remain on login page
         else:
             return render_template('login.html', error='Invalid username or password. Please try again.')
 
     return render_template('login.html', error=None)
 
-# Routing to login page with
+# Routing to registration page
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -65,31 +63,33 @@ def register():
         profile_pic_path = 'static'+'/pfp/'+profile_pic.filename
         if profile_pic.filename != "":
             profile_pic.save(profile_pic_path)
+
         # Check if username already exists in the database
         conn = sqlite3.connect('users.db')
         c = conn.cursor()
         c.execute("SELECT * FROM users WHERE username = ?", (username,))
         existing_user = c.fetchone()
 
+        # If the username exists already, display an error and remain on registration page
         if existing_user:
             conn.close()
             return render_template('register.html', error='Username already exists. Please choose a different username.')
+        # Otherwise redirect to
         else:
             c.execute("INSERT INTO users (username, password, profile_pic_path) VALUES (?, ?,?)", (username, password, profile_pic_path))
             conn.commit()
             conn.close()
-            return redirect(url_for('index'))
+            return redirect(url_for('login'))
     else:
         return render_template('register.html', error=None)
     
 
 
-# Forum routes and functions
-
+# Routing to forum page
 @app.route('/discussion', methods=['GET'])
 def discussion():
+
     # Retrieve existing topics from the database
-    # Create SQLite3 database and table for topics
     # Create SQLite3 database and table for topics
     conn = sqlite3.connect('forum.db')
     c = conn.cursor()
@@ -110,10 +110,8 @@ def discussion():
         FOREIGN KEY (topic_id) REFERENCES topics (id)
     )
 ''')
-    
     conn.commit()
     conn.close()
-
 
     conn = sqlite3.connect('forum.db')
     c = conn.cursor()
@@ -124,6 +122,7 @@ def discussion():
     # Render the discussion page template and pass the topics to it
     return render_template('discussion.html', topics=topics)
 
+# Routing for discussion topics
 @app.route('/topic/<int:topic_id>', methods=['GET', 'POST'])
 def topic(topic_id):
     if request.method == 'POST':
@@ -131,7 +130,6 @@ def topic(topic_id):
         response = request.form['response']
         
         # Insert the response into the database for the given topic
-
         if 'username' in session:
             username = session['username']
         date = datetime.now().strftime("%d/%m/%Y %H:%M")
@@ -140,6 +138,7 @@ def topic(topic_id):
         c.execute("INSERT INTO responses (topic_id, response,author,date) VALUES (?, ?,?,?)", (topic_id, response, username, date))
         conn.commit()
         conn.close()
+
     # Retrieve the topic and its responses from the database
     conn = sqlite3.connect('forum.db')
     c = conn.cursor()
@@ -169,6 +168,7 @@ def new_topic():
             username = session['username']
         conn = sqlite3.connect('forum.db')
 
+        # Get timestamp for post
         current_date = datetime.now().strftime("%d/%m/%Y %H:%M")
 
         c = conn.cursor()
