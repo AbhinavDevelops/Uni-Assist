@@ -71,6 +71,7 @@ def register():
         c.execute("SELECT * FROM users WHERE username = ?", (username,))
         existing_user = c.fetchone()
 
+
         if existing_user:
             conn.close()
             return render_template('register.html', error='Username already exists. Please choose a different username.')
