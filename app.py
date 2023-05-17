@@ -17,11 +17,6 @@ c.execute('''CREATE TABLE IF NOT EXISTS users
              password TEXT NOT NULL,
              profile_pic_path TEXT)''')
 
-# Add sample user credentials
-c.execute("INSERT INTO users (username, password) VALUES (?, ?)", ('john', 'password123'))
-conn.commit()
-conn.close()
-
 # Routing to homepage
 @app.route('/')
 def homepage():
