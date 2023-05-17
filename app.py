@@ -3,11 +3,12 @@ import sqlite3
 from datetime import datetime
 import os
 
+
 app = Flask(__name__, static_url_path='/static', static_folder='static')
 app.secret_key = 'your_secret_key_here'
 
 
-# Create SQLite3 database and table
+# Create SQLite3 database and table for user credential storage
 conn = sqlite3.connect('users.db')
 c = conn.cursor()
 c.execute('''CREATE TABLE IF NOT EXISTS users
@@ -16,33 +17,22 @@ c.execute('''CREATE TABLE IF NOT EXISTS users
              password TEXT NOT NULL,
              profile_pic_path TEXT)''')
 
-# Add sample user data
-sample_users = [('john', 'password123'), ('jane', 'myp@ssword')]
-c.executemany("INSERT INTO users (username, password) VALUES (?, ?)", sample_users)
-
+# Add sample user credentials
+c.execute("INSERT INTO users (username, password) VALUES (?, ?)", ('john', 'password123'))
 conn.commit()
 conn.close()
 
+# Routing to homepage
 @app.route('/')
 def homepage():
     return render_template("homepage.html")
 
-
+# Routing to login page (needed for post-login redirect)
 @app.route('/login')
 def index():
     return render_template('login.html', error=None)
 
-
-# Connect to the SQLite database
-conn = sqlite3.connect('forum.db')
-c = conn.cursor()
-
-
-# Commit the changes and close the connection
-conn.commit()
-conn.close()
-
-
+# Routing to login page with user authentication
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     path = os.getcwd()+'/static'+'/pfp'
@@ -62,15 +52,13 @@ def login():
         if user:
             session['username'] = user[1]
             session['profile_pic_path'] = user[3]
-            print("one")
             return redirect(url_for('homepage'))
         else:
-            print("two")
             return render_template('login.html', error='Invalid username or password. Please try again.')
 
     return render_template('login.html', error=None)
 
-
+# Routing to login page with
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
