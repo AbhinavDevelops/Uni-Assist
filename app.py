@@ -7,7 +7,6 @@ import os
 app = Flask(__name__, static_url_path='/static', static_folder='static')
 app.secret_key = 'your_secret_key_here'
 
-
 # Create SQLite3 database and table for user credential storage
 conn = sqlite3.connect('users.db')
 c = conn.cursor()
@@ -44,7 +43,7 @@ def login():
         if user:
             session['username'] = user[1]
             if user[3] == None or user[3] == "" or os.path.isfile(user[3]) == False:
-                session['profile_pic_path'] = 'static'+'/pfp/'+'default.png'
+                session['profile_pic_path'] = '/static'+'/pfp/'+'default.png'
             session['profile_pic_path'] = user[3]
             return redirect(url_for('homepage'))
         # Otherwise show an error and remain on login page
