@@ -13,7 +13,7 @@ conn = sqlite3.connect('users.db')
 c = conn.cursor()
 c.execute('''CREATE TABLE IF NOT EXISTS users
              (id INTEGER PRIMARY KEY AUTOINCREMENT,
-             username TEXT NOT NULL,
+             username TEXT UNIQUE NOT NULL,
              password TEXT NOT NULL,
              profile_pic_path TEXT)''')
 
@@ -70,7 +70,6 @@ def register():
         c = conn.cursor()
         c.execute("SELECT * FROM users WHERE username = ?", (username,))
         existing_user = c.fetchone()
-
 
         if existing_user:
             conn.close()
