@@ -1,18 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<!-- <script>
-  const userId = "{{ userId }}";
-  if (userId ) {
-    // Store the user-id in localStorage
-    localStorage.setItem('user-id', "{{ userId }}" );
-  }
-  else {
-    localStorage.setItem('user-id', null);
-  }
-</script> -->
+<!-- Add Javascript Script -->
 <script src="../static/app.js"></script>
+
+<!-- Chatbot Section -->
 <div id="chatbot">
   <div id="chatbot-body">
+
+    <!-- Chatbot GUI -->
     <div id="chatbot-body-input">
       <input
               type="text"
@@ -28,6 +23,8 @@
       </div>
     </div>
   </div>
+
+  <!-- Chatbot History Displays - Includes Sent and Received -->
   <div id="chatbot-response">
     <div id="response"></div>
   </div>
@@ -38,6 +35,7 @@
     </div>
   </div>
 
+<!--  Typing Indicator -->
   <div class="chat-bubble">
     <div class="typing-indicator">
       <span></span>
@@ -46,5 +44,4 @@
     </div>
   </div>
 </div>
-
 {% endblock %}
