@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-<h1 class="page-header" id="pricing-header">Pricing</h1>
+<h1 class="page-header" id="pricing-header">Pricing Plans</h1>
 <div id="pricing-container">
+
+    <!-- Pricing Options Table -->
     <div class="panel pricing-table">
 
+        <!-- Basic Plan Column -->
         <div class="pricing-plan basic-plan">
-            <img src="../static/graphics/Jeffrey_grey.png" alt="" class="pricing-img">
+            <img src="../static/graphics/Jeffrey_grey.png" alt="UA mascot, Jeffrey on basic plan" class="pricing-img">
             <h2 class="pricing-header">Basic</h2>
             <ul class="pricing-features">
                 <li class="pricing-features-item">Up to 100 AI interactions per month</li>
@@ -16,8 +19,9 @@
             <button class="pricing-button"><a href="/register">Sign up</a></button>
         </div>
 
+        <!-- Pro Plan Column -->
         <div class="pricing-plan pro-plan">
-            <img src="../static/graphics/Jeffrey_blue.png" alt="" class="pricing-img">
+            <img src="../static/graphics/Jeffrey_blue.png" alt="UA mascot, Jeffrey on pro plan" class="pricing-img">
             <h2 class="pricing-header">Pro</h2>
             <ul class="pricing-features">
                 <li class="pricing-features-item">Up to 1000 AI interactions per month</li>
@@ -25,13 +29,17 @@
                 <li class="pricing-features-item">Waiting list priority for new features</li>
             </ul>
             <span class="pricing-price">$11.99/month</span>
+
+            <!-- Pro Plan Is Featured -->
             <button class="pricing-button is-featured"><a href="#">Free trial</a></button>
             <br>
             <span class="most-popular">MOST POPULAR</span>
         </div>
 
+        <!-- Unlimited Plan Column -->
         <div class="pricing-plan unlimited-plan">
-            <img src="../static/graphics/Jeffrey_yellow.png" alt="" class="pricing-img">
+            <img src="../static/graphics/Jeffrey_yellow.png" alt="UA mascot, Jeffrey on unlimited plan"
+                 class="pricing-img">
             <h2 class="pricing-header">Unlimited</h2>
             <ul class="pricing-features">
                 <li class="pricing-features-item">Unlimited AI interactions per month</li>
