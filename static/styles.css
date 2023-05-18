@@ -181,6 +181,16 @@ div.response::after {
   height: 90px;
 }
 
+
+button.navbar-toggler {
+  position: relative;
+  bottom: 30px;
+}
+
+.nav-link {
+  color: white;
+}
+
 .nav-link, #user_name {
   margin-left: 10px;
   margin-top: 10px;
@@ -346,47 +356,7 @@ button.is-featured:hover {
   font-weight: bold;
 }
 
-@media (max-width: 900px) {
-  body {
-    margin: auto;
-  }
-  div.pricing-table {
-    flex-direction: column;
-    align-items: center;
-    margin-top: auto;
-    border-radius: 1%;
-  }
-  div.pricing-plan {
-    width: 90%;
-  }
-  div.pricing-plan:nth-of-type(2){
-    border: none;
-  }
-  ul.pricing-features {
-    width: 85%;
-  }
-  li.pricing-features-item {
-    width: 100%;
-  }
-  img.pricing-img {
-    width: 400px;
-  }
-}
 
-@media (max-width: 468px) {
-  div.pricing-table {
-    flex-direction: column;
-    align-items: center;
-    margin-top: auto;
-    border-radius: 1%;
-  }
-  li.pricing-features-item {
-    width: 75%;
-  }
-  img.pricing-img {
-    width: 80%;
-  }
-}
 
 /* TYPING ANIMATION */
 
@@ -1023,4 +993,85 @@ body {
 .error-message {
   position: absolute;
   color: red;
+}
+
+/* MEDIA QUERIES */
+
+/* Navbar */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+    background-color: white;
+  }
+  #UWA-header-logo {
+    position: relative;
+    left: 2em;
+    top: 10em;
+  }
+  .navbar-collapse {
+    position: relative;
+    top: 45px;
+    z-index: 1;
+  }
+  .nav-link, #user_name {
+    margin-left: 0;
+    color: black;
+  }
+  .UA-logo-container {
+    display: none;
+  }
+  .navbar-toggler {
+    top: 5px;
+    left: 30px;
+  }
+}
+
+/* Footer */
+@media (max-width: 767px) {
+  .footer {
+    position: static;
+    top: initial;
+    height: auto;
+    display: none;
+  }
+}
+
+/* Pricing */
+@media (max-width: 767px) {
+  #pricing-container {
+    top: 1000px;
+    display: flex;
+  }
+  div.pricing-table {
+    flex-direction: column;
+    align-items: center;
+  }
+  div.pricing-plan {
+    width: 100%;
+    border: none;
+    margin-bottom: 40px;
+  }
+  div.pricing-plan:nth-of-type(2) {
+    border-left: none;
+    border-right: none;
+  }
+  ul.pricing-features {
+    width: 100%;
+  }
+}
+
+/* General */
+@media (max-width: 767px) {
+  .parent-container {
+    margin: 0;
+  }
+  .page-header {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 1251px) {
+  #UWA-header-logo {
+    display: none;
+  }
 }
