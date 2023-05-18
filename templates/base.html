@@ -26,8 +26,8 @@
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light">
         <!-- Colour Animation-Enabled Navbar Logo -->
         <a class="navbar-brand UA-logo-container" href="{{ url_for('homepage') }}" id="navbar-logo-link">
-            <img class="UA-logo" src="../static/graphics/UA_logo_long_white.png" alt="Uni Assist">
-            <img class="UA-logo-hover" src="../static/graphics/UA_logo_long_blue.png" alt="Uni Assist">
+            <img class="UA-logo" src="../static/graphics/UA_logo_long_white.png" alt="Uni Assist logo, white">
+            <img class="UA-logo-hover" src="../static/graphics/UA_logo_long_blue.png" alt="Uni Assist logo, blue">
         </a>
 
         <!-- Navbar Collapse Hamburger (Responsive) -->
@@ -58,9 +58,9 @@
               <!-- Displayed Profile Picture Saved in Path -->
                 <li class = "nav-item">
                     {% if session.profile_pic_path %}
-                    <img id="profile_pic" src="{{ session.profile_pic_path }}" alt="profile_pic" width="50" height="50">
+                    <img id="profile_pic" src="{{ session.profile_pic_path }}" alt="Profile picture" width="50" height="50">
                   {% else %}
-                    <img id="profile_pic" src="../static/pfp/default.png" alt="profile_pic" width="50" height="50">
+                    <img id="profile_pic" src="../static/pfp/default.png" alt="Profile picture" width="50" height="50">
                   {% endif %}
                 </li>
 
@@ -68,7 +68,7 @@
                     <a class="nav-link text-white logout-nav-item" href="/logout">Logout</a>
                 </li>
                 </ul>
-            <img id="UWA-header-logo" src="../static/graphics/UWA_logo.png" alt="UWA logo"
+            <img id="UWA-header-logo" src="../static/graphics/UWA_logo.png" alt="UWA logo in header"
             onclick="window.location = 'https://www.uwa.edu.au/'">
         </div>
     </nav>
@@ -84,7 +84,7 @@
 
                 <!-- Footer Logos -->
                 <div class="col-md-4 mb-4 text-center">
-                    <img id="UA-footer-logo" src="/static/graphics/UA_logo_tall.png" alt="UA-logo">
+                    <img id="UA-footer-logo" src="/static/graphics/UA_logo_tall.png" alt="Uni assist logo">
                     <img id="UWA-footer-logo" src="../static/graphics/UWA_logo.png" alt="UWA logo"
                     onclick="window.location = 'https://www.uwa.edu.au/'">
                 </div>
