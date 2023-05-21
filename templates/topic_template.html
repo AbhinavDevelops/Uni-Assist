@@ -13,11 +13,11 @@
 
     <!--  Displays Replies to Topic with Metadata  -->
     <div class="response-container">
-        <h2 style = "color: blueviolet;">Replies</h2>
+        <h2>Replies</h2>
         <ul>
             {% for response in responses %}
             <li>
-                <p><span style="color: rgb(166, 37, 235); font-weight: bold;">{{ response[3] }}</span>: {{ response[2] }}</p>
+                <p><span>{{ response[3] }}</span>: {{ response[2] }}</p>
                 <p>Posted on: {{ response[4] }}</p>
             </li>
             {% endfor %}

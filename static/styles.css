@@ -90,9 +90,11 @@ body {
 }
 
 .response-container {
-  background-color: #b3b5b9;
-  color: #f4f7f2;
-  padding: 10px;
+  color:#ffcc07;
+  background-color: #434343;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
 
 #history-list {
@@ -639,6 +641,7 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: #ffcc07;
 }
+
 
 /* LOGOS */
 
