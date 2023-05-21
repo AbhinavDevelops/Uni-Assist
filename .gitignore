@@ -1,4 +1,4 @@
-.DS_Store
+
 
 # VSCode build file
 .vscode
@@ -240,3 +240,6 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 .idea
+
+.DS_Store
+templates/test.html

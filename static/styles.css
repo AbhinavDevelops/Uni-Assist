@@ -179,6 +179,8 @@ div.response::after {
 #main-navbar {
   background-color: #f4aa00;
   height: 90px;
+  width: 100%;
+  display: flex;
 }
 
 
