@@ -168,7 +168,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const body = document.querySelector("body");
         const questionField = document.querySelector("#question-input");
         const chatBot = document.querySelector("#chatbot");
-        const darkmodeEnabledElements = [body, questionField, chatBot, sendButton, historyButton]
+        const filterEntry = document.querySelector("#filter-input");
+        const darkmodeEnabledElements = [body, questionField, chatBot, sendButton, historyButton, filterEntry]
 
 
         // Logic for dark mode implementation in ai-chat page
