@@ -11,15 +11,14 @@
     <!--  Registration Form  -->
     <form method="post" action="/register" enctype="multipart/form-data" id="registration-form">
         <label for="username"></label>
-        <input type="text" name="username" id="username" placeholder="Username" alt="Username input" required>
+        <input type="text" name="username" id="username" placeholder="Username" required>
         <label for="password"></label>
-        <input type="password" name="password" id="password" placeholder="Password " alt="Password input"required>
+        <input type="password" name="password" id="password" placeholder="Password " required>
         <br>
         <label for="profile_pic_input"><b>Profile Picture</b></label>
-        <input type="file" name="profile_pic" id="profile_pic_input" accept="image/*" placeholder="hiasdlas"
-               alt="Profile picture selection button">
+        <input type="file" name="profile_pic" id="profile_pic_input" accept="image/*">
         <br>
-        <input type="submit" value="Register" id="register-button" alt="Registration submit button">
+        <input type="submit" value="Register" id="register-button">
     </form>
     <p>Already have an account? <a href="../login">Login</a></p>
 </div>
