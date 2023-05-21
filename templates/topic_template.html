@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="parent-container">
-
     <!--  Topic Title  -->
     <h1 class="page-header" style="text-decoration: underline;">{{ topic[1] }}</h1>
 
@@ -13,16 +12,17 @@
     <p>Posted on: {{ topic[4] }}</p>
 
     <!--  Displays Replies to Topic with Metadata  -->
-    <h2>Replies</h2>
-    <ul>
-        {% for response in responses %}
-        <li>
-            <p><span style="color: blue; font-weight: bold;">{{ response[3] }}</span>: {{ response[2] }}</p>
-
-            <p>Posted on: {{ response[4] }}</p>
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="response-container">
+        <h2 style = "color: blueviolet;">Replies</h2>
+        <ul>
+            {% for response in responses %}
+            <li>
+                <p><span style="color: rgb(166, 37, 235); font-weight: bold;">{{ response[3] }}</span>: {{ response[2] }}</p>
+                <p>Posted on: {{ response[4] }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 
     <!--  Add Post Reply UI -->
     <h2>Reply</h2>

@@ -1075,3 +1075,9 @@ body {
     display: none;
   }
 }
+
+.response-container {
+  background-color: #b3b5b9;
+  color: #f4f7f2;
+  padding: 10px;
+}
