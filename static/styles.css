@@ -89,6 +89,12 @@ body {
   color: #333;
 }
 
+.response-container {
+  background-color: #b3b5b9;
+  color: #f4f7f2;
+  padding: 10px;
+}
+
 #history-list {
   display: flex;
   flex-direction: column;
@@ -179,8 +185,7 @@ div.response::after {
 #main-navbar {
   background-color: #f4aa00;
   height: 90px;
-  width: 100%;
-  display: flex;
+  margin-right: 0;
 }
 
 
@@ -244,7 +249,7 @@ button.navbar-toggler {
 div.pricing-table {
   background-color: white;
   box-shadow: 0 0 40px #447ec8;
-  border-radius: 2%;
+  border-radius: 10px;
   max-width: 960px;
   padding: 1em 0;
   display: flex;
@@ -357,8 +362,6 @@ button.is-featured:hover {
 .most-popular {
   font-weight: bold;
 }
-
-
 
 /* TYPING ANIMATION */
 
@@ -554,11 +557,11 @@ p.question.dark-mode {
 }
 
 #threads li:nth-child(even) {
-  background-color: #cfe7ff; /* Pale blue background for every second thread */
+  background-color: #cfe7ff;
 }
 
 #threads li:nth-child(odd) {
-  background-color: #fff3d1; /* Pale blue background for every second thread */
+  background-color: #fff3d1;
 }
 
 #threads li a {
@@ -693,6 +696,7 @@ form input[type="submit"]:hover {
   left: 50%;
   top: 250%;
   transform: translate(-50%, -50%);
+  width: 75%;
 }
 
 .carousel-control-prev-icon,
@@ -709,11 +713,6 @@ form input[type="submit"]:hover {
 
 
 /* HOMEPAGE TEXT */
-
-body {
-  margin: 0;
-  padding: 0;
-}
 
 #homepage_container {
   margin: 5%;
@@ -901,10 +900,16 @@ body {
   top: 340%;
   left: 50%;
   transform: translate(-50%, -50%);
+  max-width: 85vw;
+}
+
+#contact-form input, #contact-form textarea {
+  height: auto;
 }
 
 #contact-us-h2 {
   position: absolute;
+  text-align: center;
   top: 304%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -939,13 +944,16 @@ body {
 #features-container {
   position: absolute;
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   left: 50%;
   top: 163%;
   transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 #features-container > img {
-  width: 400px;
+  width: 33%;
   height: auto;
 }
 
@@ -1020,7 +1028,8 @@ body {
     color: black;
   }
   .UA-logo-container {
-    display: none;
+    position: absolute;
+    left: 65px;
   }
   .navbar-toggler {
     top: 5px;
@@ -1039,7 +1048,7 @@ body {
 }
 
 /* Pricing */
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   #pricing-container {
     top: 1000px;
     display: flex;
@@ -1076,10 +1085,4 @@ body {
   #UWA-header-logo {
     display: none;
   }
-}
-
-.response-container {
-  background-color: #b3b5b9;
-  color: #f4f7f2;
-  padding: 10px;
 }

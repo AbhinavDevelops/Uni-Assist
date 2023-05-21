@@ -2,127 +2,126 @@
 {% block content %}
 <!--  Add Homepage-Specific Javascript App (modularisation reduces load time for other pages)  -->
 <script src="../static/homepage_app.js"></script>
-<div id="homepage">
-    <div id="background-wrapper">
+<style>
+</style>
+<div id="background-wrapper">
 
-        <!--  Simple Copywriting & Try Now Redirect Button  -->
-        <div id="homepage_container">
-            <h1 id="by-students">By students,<br>for students.</h1>
-            <p id="UA-description">A cooperative solution to uni assessment assistance.
-                <br>Talk to a student, or talk to our AI - learn on <span id="your">your</span> terms. </p>
-            <br>
-            <a href="ai-chat" class="btn btn-try-now">Try for Free</a>
-
-        </div>
-
-        <!-- Background Animations  -->
-        <div class="box">
-            <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
-            <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
-            <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
-            <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
-            <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
-            <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
-            <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
-            <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
-            <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
-            <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
-        </div>
+    <!--  Copywriting & Try Now Redirect Button  -->
+    <div id="homepage_container">
+        <h1 id="by-students">By students,<br>for students.</h1>
+        <p id="UA-description">A cooperative solution to uni assessment assistance.
+            <br>Talk to a student, or talk to our AI - learn on <span id="your">your</span> terms. </p>
+        <br>
+        <a href="ai-chat" class="btn btn-try-now">Try for Free</a>
     </div>
 
-    <!-- Animated Scroll Indicator  -->
-    <div id="page-arrow"></div>
-
-    <!--  Animated Features Display  -->
-    <h2 class="page-header" id="features-h2">Features</h2>
-    <div class="hidden" id="features-container">
-        <img class="feature hidden"
-        src="../static/graphics/UA_feature_AI.png"
-        alt="AI feature card"
-        onclick="window.location = '/ai-chat'">
-        <img class="feature hidden"
-        src="../static/graphics/UA_feature_discussion.png"
-        alt="discussion board feature card"
-        onclick="window.location = '/discussion'">
-        <img class="feature hidden"
-        src="../static/graphics/UA_feature_super.png"
-        alt="supervisor connect feature card"
-        onclick="window.location = '/pricing'">
+    <!-- Background Animations  -->
+    <div class="box">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
+        <img src="/static/graphics/Jeffrey.png" alt="The UA mascot, jeffrey">
     </div>
+</div>
 
-    <div class="light-grey-divider divider-1"></div>
+<!-- Animated Scroll Indicator  -->
+<div id="page-arrow"></div>
 
-    <!--  Testimonial Carousel with Autoscroll and Scroll Controls  -->
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-ride="carousel" data-interval="3000">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../static/graphics/testimonial_1.png" class="testimonial-photo d-block w-100" alt="testimony">
-                <div class="carousel-caption d-none d-md-block">
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="../static/graphics/testimonial_2.png" class="testimonial-photo d-block w-100" alt="testimony">
-                <div class="carousel-caption d-none d-md-block">
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="../static/graphics/testimonial_3.png" class="testimonial-photo d-block w-100" alt="testimony">
-                <div class="carousel-caption d-none d-md-block">
-                </div>
+<!--  Animated Features Display  -->
+<h2 class="page-header" id="features-h2">Features</h2>
+<div class="hidden" id="features-container">
+    <img class="feature hidden"
+    src="../static/graphics/UA_feature_AI.png"
+    alt="AI feature card"
+    onclick="window.location = '/ai-chat'">
+    <img class="feature hidden"
+    src="../static/graphics/UA_feature_discussion.png"
+    alt="discussion board feature card"
+    onclick="window.location = '/discussion'">
+    <img class="feature hidden"
+    src="../static/graphics/UA_feature_super.png"
+    alt="supervisor connect feature card"
+    onclick="window.location = '/pricing'">
+</div>
+
+<div class="light-grey-divider divider-1"></div>
+
+<!--  Testimonial Carousel with Autoscroll and Scroll Controls  -->
+<div id="carouselExampleAutoplaying" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../static/graphics/testimonial_1.png" class="testimonial-photo d-block w-100" alt="testimony">
+            <div class="carousel-caption d-none d-md-block">
             </div>
         </div>
-        <button class="carousel-control-prev text-dark" type="button"
-        data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next text-dark" type="button"
-        data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <div class="carousel-item">
+            <img src="../static/graphics/testimonial_2.png" class="testimonial-photo d-block w-100" alt="testimony">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="../static/graphics/testimonial_3.png" class="testimonial-photo d-block w-100" alt="testimony">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
     </div>
-    <div class="light-grey-divider divider-2"></div>
-    <div id="contact-anchor-point"></div>
-    <br>
-    <h2 class="page-header" id="contact-us-h2">Contact Us</h2>
+    <button class="carousel-control-prev text-dark" type="button"
+    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next text-dark" type="button"
+    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="light-grey-divider divider-2"></div>
+<div id="contact-anchor-point"></div>
+<br>
+<h2 class="page-header" id="contact-us-h2">Contact Us</h2>
 
-    <!--  Contact Form (API functionality not added - conditional message display suffices for site showcase -->
-    <div id="contact-form-container">
-        <form id="contact-form" style="width: 1000px;">
-            <div class="form-group row">
-                <label for="name" class="col-sm-2 col-form-label">Name:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="name" placeholder="Name" alt="Name field" required>
-                </div>
+<!--  Contact Form (API functionality not added - conditional message display suffices for site showcase -->
+<div id="contact-form-container">
+    <form id="contact-form" style="width: 1000px;">
+        <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="name" placeholder="Name" alt="Name field" required>
             </div>
-            <br>
-            <div class="form-group row">
-                <label for="email" class="col-sm-2 col-form-label">Email:</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" placeholder="example@email.com"
-                           alt="Email field" required>
-                </div>
+        </div>
+        <br>
+        <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Email:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" placeholder="example@email.com"
+                       alt="Email field" required>
             </div>
-            <br>
-            <div class="form-group row">
-                <label for="subject" class="col-sm-2 col-form-label">Subject:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="subject" placeholder="Subject"
-                           alt="Subject field" required>
-                </div>
+        </div>
+        <br>
+        <div class="form-group row">
+            <label for="subject" class="col-sm-2 col-form-label">Subject:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="subject" placeholder="Subject"
+                       alt="Subject field" required>
             </div>
-            <br>
-            <div class="form-group row">
-                <label for="description" class="col-sm-2 col-form-label">Description:</label>
-                <div class="col-sm-10">
-                    <textarea class="form-control" id="description" rows="3"
-                              placeholder="Description" required></textarea>
-                </div>
+        </div>
+        <br>
+        <div class="form-group row">
+            <label for="description" class="col-sm-2 col-form-label">Description:</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="description" rows="3"
+                          placeholder="Description" required></textarea>
             </div>
-            <br>
-            <button id="contact-submit-button" type="submit" class="btn btn-primary">Send</button>
-        </form>
-    </div>
+        </div>
+        <br>
+        <button id="contact-submit-button" type="submit" class="btn btn-primary">Send</button>
+    </form>
 </div>
 {% endblock %}
