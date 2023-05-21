@@ -196,10 +196,10 @@ button.navbar-toggler {
 
 .nav-link {
   color: white;
+  margin-left: 10px;
 }
 
 .nav-link, #user_name {
-  margin-left: 10px;
   margin-top: 10px;
   font-size: 21px;
   padding: 0;
@@ -210,13 +210,16 @@ button.navbar-toggler {
 }
 
 #user_name {
-  position: relative;
-  margin-left: 200px;
   text-transform: capitalize;
+  margin-left: 50%;
+  margin-right: 50px;
+}
+
+.nav-links {
+  width: 80%;
 }
 
 #profile_pic {
-  margin-left: 2em;
   border-radius: 10px;
 }
 
