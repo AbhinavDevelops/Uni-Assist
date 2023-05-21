@@ -11,9 +11,10 @@
     <!--  Login Form  -->
     <form method="post" action="/login" id="login-form">
         <label for="username"></label>
-        <input type="text" name="username" id="username" placeholder="Username " required>
+        <input type="text" name="username" id="username" placeholder="Username " autocomplete="username" required>
         <label for="password"></label>
-        <input type="password" name="password" id="password" placeholder="Password " required>
+        <input type="password" name="password" id="password" placeholder="Password " autocomplete="current-password"
+               required>
         <br>
         <input type="submit" value="Login" id="login-button">
     </form>
