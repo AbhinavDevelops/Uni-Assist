@@ -57,6 +57,13 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
+        conn = sqlite3.connect('users.db')
+        c = conn.cursor()
+        c.execute('''CREATE TABLE IF NOT EXISTS users
+                     (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                     username TEXT UNIQUE NOT NULL,
+                     password TEXT NOT NULL,
+                     profile_pic_path TEXT)''')
         username = request.form['username']
         password = request.form['password']
         profile_pic = request.files['profile_pic']
@@ -145,12 +152,12 @@ def topic(topic_id):
     c = conn.cursor()
     c.execute("SELECT * FROM topics WHERE id = ?", (topic_id,))
     topic = c.fetchone()
-    
+
     c.execute("SELECT * FROM responses WHERE topic_id = ?", (topic_id,))
     responses = c.fetchall()
-    
+
     conn.close()
-    
+
     # Render the topic page template and pass the topic and responses to it
     return render_template('topic_template.html', topic=topic, responses=responses)
 
@@ -160,11 +167,11 @@ def new_topic():
         # Get the submitted topic details from the form
         title = request.form['title']
         content = request.form['content']
-        
+
         # Insert the new topic into the database
         con1 = sqlite3.connect('users.db')
         c = con1.cursor()
-            
+
         if 'username' in session:
             username = session['username']
         conn = sqlite3.connect('forum.db')
@@ -173,14 +180,14 @@ def new_topic():
         current_date = datetime.now().strftime("%d/%m/%Y %H:%M")
 
         c = conn.cursor()
-    
+
         c.execute("INSERT INTO topics (title, content, user, date) VALUES (?, ?, ?,?)", (title, content, username, current_date))
         conn.commit()
         conn.close()
-        
+
         # Redirect to the discussion page
         return redirect(url_for('discussion'))
-    
+
     # Render the new topic page template
     return render_template('new_topic.html')
 
