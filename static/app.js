@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     AIPfp.src= "../static/graphics/Jeffrey_yellow.png"
                     AIPfp.classList.add("profile-picture");
                     AIPfp.style.alignSelf = "flex-start";
+                    AIPfp.style.width = "65px"
 
                     // Add classes for styling and static label text
                     newResponseLabel.innerText = "AI Assistant";

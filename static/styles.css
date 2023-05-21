@@ -185,7 +185,6 @@ div.response::after {
 #main-navbar {
   background-color: #f4aa00;
   height: 90px;
-  margin-right: 0;
 }
 
 
@@ -212,7 +211,7 @@ button.navbar-toggler {
 #user_name {
   text-transform: capitalize;
   margin-left: 50%;
-  margin-right: 50px;
+  margin-right: 85px;
 }
 
 .nav-links {
