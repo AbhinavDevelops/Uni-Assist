@@ -152,9 +152,11 @@
             if (username === "") {
                 $(".logout-nav-item").hide();
                 $(".signin-nav-item").show();
+                $("#profile_pic").hide();
             } else {
                 $(".logout-nav-item").show();
                 $(".signin-nav-item").hide();
+                $("#profile_pic").show();
             }
         });
     </script>

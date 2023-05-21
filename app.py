@@ -67,7 +67,7 @@ def register():
         username = request.form['username']
         password = request.form['password']
         profile_pic = request.files['profile_pic']
-        profile_pic_path = '/static'+'/pfp/'+profile_pic.filename
+        profile_pic_path = 'static'+'/pfp/'+profile_pic.filename
         if profile_pic.filename != "":
             profile_pic.save(profile_pic_path)
 
