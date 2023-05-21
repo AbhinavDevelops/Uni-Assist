@@ -176,7 +176,7 @@ div.response::after {
 
 .footer {
   position: absolute;
-  top: 385%;
+  top: 380%;
   height: 565px;
 }
 
@@ -900,7 +900,7 @@ form input[type="submit"]:hover {
 
 #contact-form {
   position: absolute;
-  top: 340%;
+  top: 330%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 85vw;
@@ -1041,11 +1041,8 @@ form input[type="submit"]:hover {
 }
 
 /* Footer */
-@media (max-width: 767px) {
-  .footer {
-    position: static;
-    top: initial;
-    height: auto;
+@media (max-width: 991px) {
+  .footer img {
     display: none;
   }
 }
