@@ -132,11 +132,11 @@ div.question {
   padding: 10px;
 }
 
-p.question {
+p.question, p.question-label {
   font-weight: bold;
 }
 
-p.response {
+p.response, p.response-label {
   align-self: flex-start;
   font-weight: bold;
 }
@@ -427,13 +427,19 @@ button.is-featured:hover {
   color: white;
 }
 
-#chatbot-body-input-button.dark-mode, #chatbot-history-button.dark-mode {
+#chatbot-body-input-button.dark-mode, #chatbot-history-button.dark-mode, #filter-button.dark-mode {
   background-color: #525576;
   color: white;
 }
 
-p.question.dark-mode {
-  color: orange;
+p.question-label.dark-mode{
+  background-color: transparent;
+  color: #0006ff;
+}
+
+p.response-label.dark-mode {
+  background-color: transparent;
+  color: #ffcc07;
 }
 
 #question-input {
