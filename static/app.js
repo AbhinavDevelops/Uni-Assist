@@ -200,9 +200,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function filterChatHistory() {
-        const filterInput = document.getElementById('filter-input');
-        const filterValue = filterInput.value.toLowerCase();
-
+        // Get relevant document objects
+        const filterValue = document.getElementById("filter-input").value.toLowerCase();
         const historyList = document.getElementById('history-list');
         const responses = historyList.getElementsByClassName('response');
         const questions = historyList.getElementsByClassName('question');
