@@ -1,6 +1,8 @@
 // App will only function once document object content is loaded
 document.addEventListener('DOMContentLoaded', function() {
 
+    let history;
+
     // Store profile picture path
     const pfpPath = '../'+ sessionStorage.getItem('profile_pic_path');
 
@@ -19,8 +21,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // This key will be deprecated after group demo
     const apiKey = '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';
 
-    // Initialise chat history array
-    let history = [];
+    function getChatHistory(){
+        fetch('/get-history', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Update the history variable with the retrieved chat history
+                history = data;
+                console.log('Chat history retrieved:', history);
+    
+                // Use the chat history as needed in your code
+                // ...
+            })
+            .catch(error => {
+                console.error('Error retrieving chat history:', error);
+            });
+    }
+    getChatHistory();
 
     // Store element references
     const questionInput = document.getElementById('question-input');
@@ -159,9 +180,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Update history list for use in chat context and reprinting
                 history.push({"question": question, "response": data.choices[0].text.trim()});
+                console.log(history);
+                fetch('/save-history', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(history) // Send the history array as the request payload
+                })
+                .then(response => {
+                    // Handle the response from the /save-history endpoint if needed
+                    // For example, you can display a success message to the user
+                    console.log('History saved successfully');
+                })
+                .catch(error => {
+                    // Handle any errors that occurred during the request
+                    console.error('Error saving history:', error);
+                });
             })
             .catch(error => console.error(error));
-    }
+
+        
+    };
+
+
+
 
     // Get dark mode toggle elements and store in an array
     const toggleSwitch = document.querySelector('.toggle-switch');

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 import sqlite3
 from datetime import datetime
 import os
@@ -15,6 +15,17 @@ c.execute('''CREATE TABLE IF NOT EXISTS users
              username TEXT UNIQUE NOT NULL,
              password TEXT NOT NULL,
              profile_pic_path TEXT)''')
+
+c.execute('''
+    CREATE TABLE IF NOT EXISTS chat_history (
+        chat_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        question TEXT,
+        response TEXT,
+        user_id INTEGER,
+        FOREIGN KEY (user_id) REFERENCES users (id)
+    )
+''')
+
 
 # Routing to homepage
 @app.route('/')
@@ -207,6 +218,58 @@ def contact():
 @app.route("/ai-chat")
 def aiChat():
     return render_template("chat.html")
+
+@app.route('/save-history', methods=['POST'])
+def save_history():
+    data = request.json
+    # Store the chat history in the database
+    # Example code using SQLite3
+    conn = sqlite3.connect('users.db')
+    c = conn.cursor()
+
+    # Iterate over each item in the chat history and insert into the database
+    user_name = session['username']
+    c.execute("SELECT id FROM users WHERE username = ?", (user_name,))
+    user_id = c.fetchone()[0]
+    for item in data:
+        question = item["question"]
+        response = item["response"]
+        print("Question: " + question)
+        print("Response: " + response)
+
+        # Check if the question and response pair already exists in the database
+        c.execute("SELECT COUNT(*) FROM chat_history WHERE question = ? AND response = ? AND user_id = ?",
+                  (question, response, user_id))
+        count = c.fetchone()[0]
+
+        # If the pair doesn't exist, insert it into the database
+        if count == 0:
+            c.execute("INSERT INTO chat_history (question, response, user_id) VALUES (?, ?, ?)",
+                      (question, response, user_id))
+
+    conn.commit()
+    conn.close()
+
+    return jsonify(success=True)
+
+@app.route('/get-history', methods=['GET'])
+def get_history():
+    # Retrieve the chat history from the database
+    # Example code using SQLite3
+    conn = sqlite3.connect('users.db')
+    c = conn.cursor()
+
+    user_name = session['username']
+    c.execute("SELECT id FROM users WHERE username = ?", (user_name,))
+    user_id = c.fetchone()[0]
+
+    c.execute("SELECT question, response FROM chat_history WHERE user_id = ?", (user_id,))
+    history = c.fetchall()
+
+    conn.close()
+
+    return jsonify(history)
+
 
 if __name__ == '__main__':
     app.run(debug=True, port = 5001)
