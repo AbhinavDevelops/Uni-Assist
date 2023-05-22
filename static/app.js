@@ -91,8 +91,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Store chat context for use in prompting
             let chatContext = [];
-            for (let i = 0; i < history.length - 1; i++) {
-                chatContext.push(history[i].response);
+            for (let i = 0; i < history.length; i++) {
+                chatContext.push("I asked: " + history[i].question);
+                chatContext.push("You replied: " + history[i].response);
             }
 
             // Open AI API call
@@ -157,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     hideTypingIndicator();
 
                     // Update history list for use in chat context and reprinting
-                    history.push({question: question, response: data.choices[0].text.trim()});
+                    history.push({"question": question, "response": data.choices[0].text.trim()});
                 })
                 .catch(error => console.error(error));
         }
