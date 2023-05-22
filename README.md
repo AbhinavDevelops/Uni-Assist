@@ -83,7 +83,6 @@ Please refer to the commit logs below for a detailed history of the contribution
 
 ## Git / contribution logs
 ```
-* 6d7571e  (origin/proper_history) stores and retrieves chat history (Abhinav Rajaram)
 * 8d8c5c0  (HEAD -> main, origin/main, origin/HEAD) cleaned up in-line script (Wei)
 * cc221cf  profile images now display in search view and works with darkmode also. (Wei)
 * 8503c7e  fixed chat context break (Wei)
